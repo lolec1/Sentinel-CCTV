@@ -1,0 +1,3198 @@
+{
+  "resolution": "3840x2160",
+  "fps": 29.97002997002997,
+  "duration_sec": 127.63,
+  "total_frames": 3825,
+  "series": [
+    {
+      "time_sec": 0.0,
+      "vehicles": 15,
+      "pedestrians": 6
+    },
+    {
+      "time_sec": 0.2,
+      "vehicles": 16,
+      "pedestrians": 6
+    },
+    {
+      "time_sec": 0.4,
+      "vehicles": 16,
+      "pedestrians": 7
+    },
+    {
+      "time_sec": 0.6,
+      "vehicles": 14,
+      "pedestrians": 7
+    },
+    {
+      "time_sec": 0.8,
+      "vehicles": 14,
+      "pedestrians": 8
+    },
+    {
+      "time_sec": 1.0,
+      "vehicles": 11,
+      "pedestrians": 7
+    },
+    {
+      "time_sec": 1.2,
+      "vehicles": 15,
+      "pedestrians": 7
+    },
+    {
+      "time_sec": 1.4,
+      "vehicles": 13,
+      "pedestrians": 9
+    },
+    {
+      "time_sec": 1.6,
+      "vehicles": 15,
+      "pedestrians": 7
+    },
+    {
+      "time_sec": 1.8,
+      "vehicles": 13,
+      "pedestrians": 8
+    },
+    {
+      "time_sec": 2.0,
+      "vehicles": 7,
+      "pedestrians": 8
+    },
+    {
+      "time_sec": 2.2,
+      "vehicles": 12,
+      "pedestrians": 8
+    },
+    {
+      "time_sec": 2.4,
+      "vehicles": 11,
+      "pedestrians": 9
+    },
+    {
+      "time_sec": 2.6,
+      "vehicles": 10,
+      "pedestrians": 10
+    },
+    {
+      "time_sec": 2.8,
+      "vehicles": 10,
+      "pedestrians": 8
+    },
+    {
+      "time_sec": 3.0,
+      "vehicles": 9,
+      "pedestrians": 11
+    },
+    {
+      "time_sec": 3.2,
+      "vehicles": 10,
+      "pedestrians": 9
+    },
+    {
+      "time_sec": 3.4,
+      "vehicles": 13,
+      "pedestrians": 10
+    },
+    {
+      "time_sec": 3.6,
+      "vehicles": 11,
+      "pedestrians": 14
+    },
+    {
+      "time_sec": 3.8,
+      "vehicles": 13,
+      "pedestrians": 15
+    },
+    {
+      "time_sec": 4.0,
+      "vehicles": 9,
+      "pedestrians": 10
+    },
+    {
+      "time_sec": 4.2,
+      "vehicles": 10,
+      "pedestrians": 13
+    },
+    {
+      "time_sec": 4.4,
+      "vehicles": 11,
+      "pedestrians": 10
+    },
+    {
+      "time_sec": 4.6,
+      "vehicles": 9,
+      "pedestrians": 11
+    },
+    {
+      "time_sec": 4.8,
+      "vehicles": 8,
+      "pedestrians": 12
+    },
+    {
+      "time_sec": 5.0,
+      "vehicles": 8,
+      "pedestrians": 13
+    },
+    {
+      "time_sec": 5.21,
+      "vehicles": 7,
+      "pedestrians": 13
+    },
+    {
+      "time_sec": 5.41,
+      "vehicles": 7,
+      "pedestrians": 10
+    },
+    {
+      "time_sec": 5.61,
+      "vehicles": 9,
+      "pedestrians": 12
+    },
+    {
+      "time_sec": 5.81,
+      "vehicles": 10,
+      "pedestrians": 11
+    },
+    {
+      "time_sec": 6.01,
+      "vehicles": 8,
+      "pedestrians": 11
+    },
+    {
+      "time_sec": 6.21,
+      "vehicles": 10,
+      "pedestrians": 10
+    },
+    {
+      "time_sec": 6.41,
+      "vehicles": 9,
+      "pedestrians": 12
+    },
+    {
+      "time_sec": 6.61,
+      "vehicles": 9,
+      "pedestrians": 13
+    },
+    {
+      "time_sec": 6.81,
+      "vehicles": 7,
+      "pedestrians": 12
+    },
+    {
+      "time_sec": 7.01,
+      "vehicles": 6,
+      "pedestrians": 17
+    },
+    {
+      "time_sec": 7.21,
+      "vehicles": 8,
+      "pedestrians": 14
+    },
+    {
+      "time_sec": 7.41,
+      "vehicles": 7,
+      "pedestrians": 12
+    },
+    {
+      "time_sec": 7.61,
+      "vehicles": 9,
+      "pedestrians": 13
+    },
+    {
+      "time_sec": 7.81,
+      "vehicles": 7,
+      "pedestrians": 14
+    },
+    {
+      "time_sec": 8.01,
+      "vehicles": 7,
+      "pedestrians": 13
+    },
+    {
+      "time_sec": 8.21,
+      "vehicles": 8,
+      "pedestrians": 12
+    },
+    {
+      "time_sec": 8.41,
+      "vehicles": 12,
+      "pedestrians": 11
+    },
+    {
+      "time_sec": 8.61,
+      "vehicles": 10,
+      "pedestrians": 17
+    },
+    {
+      "time_sec": 8.81,
+      "vehicles": 12,
+      "pedestrians": 15
+    },
+    {
+      "time_sec": 9.01,
+      "vehicles": 12,
+      "pedestrians": 15
+    },
+    {
+      "time_sec": 9.21,
+      "vehicles": 10,
+      "pedestrians": 13
+    },
+    {
+      "time_sec": 9.41,
+      "vehicles": 10,
+      "pedestrians": 15
+    },
+    {
+      "time_sec": 9.61,
+      "vehicles": 10,
+      "pedestrians": 14
+    },
+    {
+      "time_sec": 9.81,
+      "vehicles": 9,
+      "pedestrians": 14
+    },
+    {
+      "time_sec": 10.01,
+      "vehicles": 9,
+      "pedestrians": 17
+    },
+    {
+      "time_sec": 10.21,
+      "vehicles": 9,
+      "pedestrians": 15
+    },
+    {
+      "time_sec": 10.41,
+      "vehicles": 11,
+      "pedestrians": 15
+    },
+    {
+      "time_sec": 10.61,
+      "vehicles": 10,
+      "pedestrians": 10
+    },
+    {
+      "time_sec": 10.81,
+      "vehicles": 9,
+      "pedestrians": 14
+    },
+    {
+      "time_sec": 11.01,
+      "vehicles": 9,
+      "pedestrians": 12
+    },
+    {
+      "time_sec": 11.21,
+      "vehicles": 10,
+      "pedestrians": 13
+    },
+    {
+      "time_sec": 11.41,
+      "vehicles": 11,
+      "pedestrians": 17
+    },
+    {
+      "time_sec": 11.61,
+      "vehicles": 8,
+      "pedestrians": 13
+    },
+    {
+      "time_sec": 11.81,
+      "vehicles": 6,
+      "pedestrians": 14
+    },
+    {
+      "time_sec": 12.01,
+      "vehicles": 7,
+      "pedestrians": 13
+    },
+    {
+      "time_sec": 12.21,
+      "vehicles": 8,
+      "pedestrians": 13
+    },
+    {
+      "time_sec": 12.41,
+      "vehicles": 9,
+      "pedestrians": 11
+    },
+    {
+      "time_sec": 12.61,
+      "vehicles": 10,
+      "pedestrians": 13
+    },
+    {
+      "time_sec": 12.81,
+      "vehicles": 11,
+      "pedestrians": 15
+    },
+    {
+      "time_sec": 13.01,
+      "vehicles": 9,
+      "pedestrians": 17
+    },
+    {
+      "time_sec": 13.21,
+      "vehicles": 11,
+      "pedestrians": 12
+    },
+    {
+      "time_sec": 13.41,
+      "vehicles": 13,
+      "pedestrians": 16
+    },
+    {
+      "time_sec": 13.61,
+      "vehicles": 10,
+      "pedestrians": 14
+    },
+    {
+      "time_sec": 13.81,
+      "vehicles": 12,
+      "pedestrians": 13
+    },
+    {
+      "time_sec": 14.01,
+      "vehicles": 11,
+      "pedestrians": 18
+    },
+    {
+      "time_sec": 14.21,
+      "vehicles": 14,
+      "pedestrians": 15
+    },
+    {
+      "time_sec": 14.41,
+      "vehicles": 14,
+      "pedestrians": 11
+    },
+    {
+      "time_sec": 14.61,
+      "vehicles": 13,
+      "pedestrians": 16
+    },
+    {
+      "time_sec": 14.81,
+      "vehicles": 14,
+      "pedestrians": 14
+    },
+    {
+      "time_sec": 15.02,
+      "vehicles": 12,
+      "pedestrians": 15
+    },
+    {
+      "time_sec": 15.22,
+      "vehicles": 12,
+      "pedestrians": 14
+    },
+    {
+      "time_sec": 15.42,
+      "vehicles": 14,
+      "pedestrians": 14
+    },
+    {
+      "time_sec": 15.62,
+      "vehicles": 12,
+      "pedestrians": 14
+    },
+    {
+      "time_sec": 15.82,
+      "vehicles": 14,
+      "pedestrians": 14
+    },
+    {
+      "time_sec": 16.02,
+      "vehicles": 12,
+      "pedestrians": 15
+    },
+    {
+      "time_sec": 16.22,
+      "vehicles": 13,
+      "pedestrians": 15
+    },
+    {
+      "time_sec": 16.42,
+      "vehicles": 15,
+      "pedestrians": 13
+    },
+    {
+      "time_sec": 16.62,
+      "vehicles": 12,
+      "pedestrians": 14
+    },
+    {
+      "time_sec": 16.82,
+      "vehicles": 10,
+      "pedestrians": 14
+    },
+    {
+      "time_sec": 17.02,
+      "vehicles": 12,
+      "pedestrians": 13
+    },
+    {
+      "time_sec": 17.22,
+      "vehicles": 12,
+      "pedestrians": 13
+    },
+    {
+      "time_sec": 17.42,
+      "vehicles": 12,
+      "pedestrians": 10
+    },
+    {
+      "time_sec": 17.62,
+      "vehicles": 14,
+      "pedestrians": 11
+    },
+    {
+      "time_sec": 17.82,
+      "vehicles": 13,
+      "pedestrians": 15
+    },
+    {
+      "time_sec": 18.02,
+      "vehicles": 18,
+      "pedestrians": 13
+    },
+    {
+      "time_sec": 18.22,
+      "vehicles": 17,
+      "pedestrians": 15
+    },
+    {
+      "time_sec": 18.42,
+      "vehicles": 17,
+      "pedestrians": 13
+    },
+    {
+      "time_sec": 18.62,
+      "vehicles": 16,
+      "pedestrians": 13
+    },
+    {
+      "time_sec": 18.82,
+      "vehicles": 16,
+      "pedestrians": 12
+    },
+    {
+      "time_sec": 19.02,
+      "vehicles": 18,
+      "pedestrians": 11
+    },
+    {
+      "time_sec": 19.22,
+      "vehicles": 24,
+      "pedestrians": 12
+    },
+    {
+      "time_sec": 19.42,
+      "vehicles": 23,
+      "pedestrians": 13
+    },
+    {
+      "time_sec": 19.62,
+      "vehicles": 21,
+      "pedestrians": 13
+    },
+    {
+      "time_sec": 19.82,
+      "vehicles": 19,
+      "pedestrians": 11
+    },
+    {
+      "time_sec": 20.02,
+      "vehicles": 20,
+      "pedestrians": 13
+    },
+    {
+      "time_sec": 20.22,
+      "vehicles": 16,
+      "pedestrians": 12
+    },
+    {
+      "time_sec": 20.42,
+      "vehicles": 18,
+      "pedestrians": 12
+    },
+    {
+      "time_sec": 20.62,
+      "vehicles": 20,
+      "pedestrians": 13
+    },
+    {
+      "time_sec": 20.82,
+      "vehicles": 18,
+      "pedestrians": 15
+    },
+    {
+      "time_sec": 21.02,
+      "vehicles": 19,
+      "pedestrians": 12
+    },
+    {
+      "time_sec": 21.22,
+      "vehicles": 21,
+      "pedestrians": 10
+    },
+    {
+      "time_sec": 21.42,
+      "vehicles": 18,
+      "pedestrians": 12
+    },
+    {
+      "time_sec": 21.62,
+      "vehicles": 16,
+      "pedestrians": 13
+    },
+    {
+      "time_sec": 21.82,
+      "vehicles": 27,
+      "pedestrians": 11
+    },
+    {
+      "time_sec": 22.02,
+      "vehicles": 25,
+      "pedestrians": 11
+    },
+    {
+      "time_sec": 22.22,
+      "vehicles": 18,
+      "pedestrians": 12
+    },
+    {
+      "time_sec": 22.42,
+      "vehicles": 18,
+      "pedestrians": 11
+    },
+    {
+      "time_sec": 22.62,
+      "vehicles": 19,
+      "pedestrians": 14
+    },
+    {
+      "time_sec": 22.82,
+      "vehicles": 16,
+      "pedestrians": 12
+    },
+    {
+      "time_sec": 23.02,
+      "vehicles": 15,
+      "pedestrians": 13
+    },
+    {
+      "time_sec": 23.22,
+      "vehicles": 15,
+      "pedestrians": 10
+    },
+    {
+      "time_sec": 23.42,
+      "vehicles": 17,
+      "pedestrians": 12
+    },
+    {
+      "time_sec": 23.62,
+      "vehicles": 17,
+      "pedestrians": 13
+    },
+    {
+      "time_sec": 23.82,
+      "vehicles": 16,
+      "pedestrians": 9
+    },
+    {
+      "time_sec": 24.02,
+      "vehicles": 15,
+      "pedestrians": 11
+    },
+    {
+      "time_sec": 24.22,
+      "vehicles": 15,
+      "pedestrians": 11
+    },
+    {
+      "time_sec": 24.42,
+      "vehicles": 16,
+      "pedestrians": 13
+    },
+    {
+      "time_sec": 24.62,
+      "vehicles": 14,
+      "pedestrians": 10
+    },
+    {
+      "time_sec": 24.82,
+      "vehicles": 14,
+      "pedestrians": 10
+    },
+    {
+      "time_sec": 25.03,
+      "vehicles": 16,
+      "pedestrians": 10
+    },
+    {
+      "time_sec": 25.23,
+      "vehicles": 16,
+      "pedestrians": 10
+    },
+    {
+      "time_sec": 25.43,
+      "vehicles": 18,
+      "pedestrians": 10
+    },
+    {
+      "time_sec": 25.63,
+      "vehicles": 19,
+      "pedestrians": 11
+    },
+    {
+      "time_sec": 25.83,
+      "vehicles": 17,
+      "pedestrians": 10
+    },
+    {
+      "time_sec": 26.03,
+      "vehicles": 17,
+      "pedestrians": 12
+    },
+    {
+      "time_sec": 26.23,
+      "vehicles": 17,
+      "pedestrians": 9
+    },
+    {
+      "time_sec": 26.43,
+      "vehicles": 17,
+      "pedestrians": 10
+    },
+    {
+      "time_sec": 26.63,
+      "vehicles": 21,
+      "pedestrians": 10
+    },
+    {
+      "time_sec": 26.83,
+      "vehicles": 20,
+      "pedestrians": 14
+    },
+    {
+      "time_sec": 27.03,
+      "vehicles": 19,
+      "pedestrians": 13
+    },
+    {
+      "time_sec": 27.23,
+      "vehicles": 16,
+      "pedestrians": 14
+    },
+    {
+      "time_sec": 27.43,
+      "vehicles": 18,
+      "pedestrians": 14
+    },
+    {
+      "time_sec": 27.63,
+      "vehicles": 20,
+      "pedestrians": 14
+    },
+    {
+      "time_sec": 27.83,
+      "vehicles": 19,
+      "pedestrians": 13
+    },
+    {
+      "time_sec": 28.03,
+      "vehicles": 18,
+      "pedestrians": 11
+    },
+    {
+      "time_sec": 28.23,
+      "vehicles": 21,
+      "pedestrians": 10
+    },
+    {
+      "time_sec": 28.43,
+      "vehicles": 18,
+      "pedestrians": 9
+    },
+    {
+      "time_sec": 28.63,
+      "vehicles": 20,
+      "pedestrians": 11
+    },
+    {
+      "time_sec": 28.83,
+      "vehicles": 17,
+      "pedestrians": 11
+    },
+    {
+      "time_sec": 29.03,
+      "vehicles": 19,
+      "pedestrians": 13
+    },
+    {
+      "time_sec": 29.23,
+      "vehicles": 19,
+      "pedestrians": 10
+    },
+    {
+      "time_sec": 29.43,
+      "vehicles": 23,
+      "pedestrians": 10
+    },
+    {
+      "time_sec": 29.63,
+      "vehicles": 20,
+      "pedestrians": 9
+    },
+    {
+      "time_sec": 29.83,
+      "vehicles": 19,
+      "pedestrians": 11
+    },
+    {
+      "time_sec": 30.03,
+      "vehicles": 20,
+      "pedestrians": 10
+    },
+    {
+      "time_sec": 30.23,
+      "vehicles": 17,
+      "pedestrians": 10
+    },
+    {
+      "time_sec": 30.43,
+      "vehicles": 18,
+      "pedestrians": 8
+    },
+    {
+      "time_sec": 30.63,
+      "vehicles": 18,
+      "pedestrians": 11
+    },
+    {
+      "time_sec": 30.83,
+      "vehicles": 19,
+      "pedestrians": 9
+    },
+    {
+      "time_sec": 31.03,
+      "vehicles": 18,
+      "pedestrians": 14
+    },
+    {
+      "time_sec": 31.23,
+      "vehicles": 19,
+      "pedestrians": 15
+    },
+    {
+      "time_sec": 31.43,
+      "vehicles": 19,
+      "pedestrians": 13
+    },
+    {
+      "time_sec": 31.63,
+      "vehicles": 18,
+      "pedestrians": 12
+    },
+    {
+      "time_sec": 31.83,
+      "vehicles": 16,
+      "pedestrians": 10
+    },
+    {
+      "time_sec": 32.03,
+      "vehicles": 16,
+      "pedestrians": 12
+    },
+    {
+      "time_sec": 32.23,
+      "vehicles": 19,
+      "pedestrians": 10
+    },
+    {
+      "time_sec": 32.43,
+      "vehicles": 21,
+      "pedestrians": 13
+    },
+    {
+      "time_sec": 32.63,
+      "vehicles": 19,
+      "pedestrians": 11
+    },
+    {
+      "time_sec": 32.83,
+      "vehicles": 18,
+      "pedestrians": 12
+    },
+    {
+      "time_sec": 33.03,
+      "vehicles": 21,
+      "pedestrians": 13
+    },
+    {
+      "time_sec": 33.23,
+      "vehicles": 19,
+      "pedestrians": 8
+    },
+    {
+      "time_sec": 33.43,
+      "vehicles": 17,
+      "pedestrians": 10
+    },
+    {
+      "time_sec": 33.63,
+      "vehicles": 21,
+      "pedestrians": 13
+    },
+    {
+      "time_sec": 33.83,
+      "vehicles": 18,
+      "pedestrians": 14
+    },
+    {
+      "time_sec": 34.03,
+      "vehicles": 20,
+      "pedestrians": 13
+    },
+    {
+      "time_sec": 34.23,
+      "vehicles": 19,
+      "pedestrians": 10
+    },
+    {
+      "time_sec": 34.43,
+      "vehicles": 19,
+      "pedestrians": 11
+    },
+    {
+      "time_sec": 34.63,
+      "vehicles": 20,
+      "pedestrians": 9
+    },
+    {
+      "time_sec": 34.83,
+      "vehicles": 20,
+      "pedestrians": 10
+    },
+    {
+      "time_sec": 35.04,
+      "vehicles": 22,
+      "pedestrians": 9
+    },
+    {
+      "time_sec": 35.24,
+      "vehicles": 22,
+      "pedestrians": 7
+    },
+    {
+      "time_sec": 35.44,
+      "vehicles": 21,
+      "pedestrians": 8
+    },
+    {
+      "time_sec": 35.64,
+      "vehicles": 21,
+      "pedestrians": 10
+    },
+    {
+      "time_sec": 35.84,
+      "vehicles": 18,
+      "pedestrians": 9
+    },
+    {
+      "time_sec": 36.04,
+      "vehicles": 19,
+      "pedestrians": 9
+    },
+    {
+      "time_sec": 36.24,
+      "vehicles": 22,
+      "pedestrians": 8
+    },
+    {
+      "time_sec": 36.44,
+      "vehicles": 22,
+      "pedestrians": 8
+    },
+    {
+      "time_sec": 36.64,
+      "vehicles": 19,
+      "pedestrians": 8
+    },
+    {
+      "time_sec": 36.84,
+      "vehicles": 24,
+      "pedestrians": 6
+    },
+    {
+      "time_sec": 37.04,
+      "vehicles": 25,
+      "pedestrians": 9
+    },
+    {
+      "time_sec": 37.24,
+      "vehicles": 26,
+      "pedestrians": 8
+    },
+    {
+      "time_sec": 37.44,
+      "vehicles": 22,
+      "pedestrians": 9
+    },
+    {
+      "time_sec": 37.64,
+      "vehicles": 20,
+      "pedestrians": 8
+    },
+    {
+      "time_sec": 37.84,
+      "vehicles": 21,
+      "pedestrians": 8
+    },
+    {
+      "time_sec": 38.04,
+      "vehicles": 25,
+      "pedestrians": 9
+    },
+    {
+      "time_sec": 38.24,
+      "vehicles": 23,
+      "pedestrians": 7
+    },
+    {
+      "time_sec": 38.44,
+      "vehicles": 25,
+      "pedestrians": 8
+    },
+    {
+      "time_sec": 38.64,
+      "vehicles": 26,
+      "pedestrians": 10
+    },
+    {
+      "time_sec": 38.84,
+      "vehicles": 22,
+      "pedestrians": 10
+    },
+    {
+      "time_sec": 39.04,
+      "vehicles": 24,
+      "pedestrians": 7
+    },
+    {
+      "time_sec": 39.24,
+      "vehicles": 21,
+      "pedestrians": 8
+    },
+    {
+      "time_sec": 39.44,
+      "vehicles": 24,
+      "pedestrians": 8
+    },
+    {
+      "time_sec": 39.64,
+      "vehicles": 25,
+      "pedestrians": 7
+    },
+    {
+      "time_sec": 39.84,
+      "vehicles": 25,
+      "pedestrians": 5
+    },
+    {
+      "time_sec": 40.04,
+      "vehicles": 27,
+      "pedestrians": 5
+    },
+    {
+      "time_sec": 40.24,
+      "vehicles": 24,
+      "pedestrians": 6
+    },
+    {
+      "time_sec": 40.44,
+      "vehicles": 23,
+      "pedestrians": 5
+    },
+    {
+      "time_sec": 40.64,
+      "vehicles": 23,
+      "pedestrians": 3
+    },
+    {
+      "time_sec": 40.84,
+      "vehicles": 25,
+      "pedestrians": 4
+    },
+    {
+      "time_sec": 41.04,
+      "vehicles": 26,
+      "pedestrians": 3
+    },
+    {
+      "time_sec": 41.24,
+      "vehicles": 28,
+      "pedestrians": 4
+    },
+    {
+      "time_sec": 41.44,
+      "vehicles": 25,
+      "pedestrians": 5
+    },
+    {
+      "time_sec": 41.64,
+      "vehicles": 20,
+      "pedestrians": 4
+    },
+    {
+      "time_sec": 41.84,
+      "vehicles": 22,
+      "pedestrians": 4
+    },
+    {
+      "time_sec": 42.04,
+      "vehicles": 19,
+      "pedestrians": 4
+    },
+    {
+      "time_sec": 42.24,
+      "vehicles": 19,
+      "pedestrians": 4
+    },
+    {
+      "time_sec": 42.44,
+      "vehicles": 22,
+      "pedestrians": 5
+    },
+    {
+      "time_sec": 42.64,
+      "vehicles": 22,
+      "pedestrians": 5
+    },
+    {
+      "time_sec": 42.84,
+      "vehicles": 22,
+      "pedestrians": 6
+    },
+    {
+      "time_sec": 43.04,
+      "vehicles": 23,
+      "pedestrians": 5
+    },
+    {
+      "time_sec": 43.24,
+      "vehicles": 21,
+      "pedestrians": 5
+    },
+    {
+      "time_sec": 43.44,
+      "vehicles": 19,
+      "pedestrians": 5
+    },
+    {
+      "time_sec": 43.64,
+      "vehicles": 20,
+      "pedestrians": 7
+    },
+    {
+      "time_sec": 43.84,
+      "vehicles": 19,
+      "pedestrians": 7
+    },
+    {
+      "time_sec": 44.04,
+      "vehicles": 20,
+      "pedestrians": 5
+    },
+    {
+      "time_sec": 44.24,
+      "vehicles": 20,
+      "pedestrians": 5
+    },
+    {
+      "time_sec": 44.44,
+      "vehicles": 20,
+      "pedestrians": 4
+    },
+    {
+      "time_sec": 44.64,
+      "vehicles": 22,
+      "pedestrians": 5
+    },
+    {
+      "time_sec": 44.84,
+      "vehicles": 22,
+      "pedestrians": 5
+    },
+    {
+      "time_sec": 45.05,
+      "vehicles": 21,
+      "pedestrians": 5
+    },
+    {
+      "time_sec": 45.25,
+      "vehicles": 20,
+      "pedestrians": 5
+    },
+    {
+      "time_sec": 45.45,
+      "vehicles": 22,
+      "pedestrians": 5
+    },
+    {
+      "time_sec": 45.65,
+      "vehicles": 19,
+      "pedestrians": 5
+    },
+    {
+      "time_sec": 45.85,
+      "vehicles": 20,
+      "pedestrians": 6
+    },
+    {
+      "time_sec": 46.05,
+      "vehicles": 21,
+      "pedestrians": 5
+    },
+    {
+      "time_sec": 46.25,
+      "vehicles": 22,
+      "pedestrians": 4
+    },
+    {
+      "time_sec": 46.45,
+      "vehicles": 21,
+      "pedestrians": 4
+    },
+    {
+      "time_sec": 46.65,
+      "vehicles": 20,
+      "pedestrians": 5
+    },
+    {
+      "time_sec": 46.85,
+      "vehicles": 23,
+      "pedestrians": 4
+    },
+    {
+      "time_sec": 47.05,
+      "vehicles": 23,
+      "pedestrians": 5
+    },
+    {
+      "time_sec": 47.25,
+      "vehicles": 22,
+      "pedestrians": 9
+    },
+    {
+      "time_sec": 47.45,
+      "vehicles": 21,
+      "pedestrians": 7
+    },
+    {
+      "time_sec": 47.65,
+      "vehicles": 19,
+      "pedestrians": 7
+    },
+    {
+      "time_sec": 47.85,
+      "vehicles": 21,
+      "pedestrians": 6
+    },
+    {
+      "time_sec": 48.05,
+      "vehicles": 23,
+      "pedestrians": 4
+    },
+    {
+      "time_sec": 48.25,
+      "vehicles": 22,
+      "pedestrians": 5
+    },
+    {
+      "time_sec": 48.45,
+      "vehicles": 22,
+      "pedestrians": 6
+    },
+    {
+      "time_sec": 48.65,
+      "vehicles": 23,
+      "pedestrians": 8
+    },
+    {
+      "time_sec": 48.85,
+      "vehicles": 26,
+      "pedestrians": 7
+    },
+    {
+      "time_sec": 49.05,
+      "vehicles": 22,
+      "pedestrians": 7
+    },
+    {
+      "time_sec": 49.25,
+      "vehicles": 20,
+      "pedestrians": 7
+    },
+    {
+      "time_sec": 49.45,
+      "vehicles": 23,
+      "pedestrians": 6
+    },
+    {
+      "time_sec": 49.65,
+      "vehicles": 20,
+      "pedestrians": 6
+    },
+    {
+      "time_sec": 49.85,
+      "vehicles": 23,
+      "pedestrians": 6
+    },
+    {
+      "time_sec": 50.05,
+      "vehicles": 25,
+      "pedestrians": 5
+    },
+    {
+      "time_sec": 50.25,
+      "vehicles": 17,
+      "pedestrians": 6
+    },
+    {
+      "time_sec": 50.45,
+      "vehicles": 24,
+      "pedestrians": 7
+    },
+    {
+      "time_sec": 50.65,
+      "vehicles": 23,
+      "pedestrians": 7
+    },
+    {
+      "time_sec": 50.85,
+      "vehicles": 22,
+      "pedestrians": 7
+    },
+    {
+      "time_sec": 51.05,
+      "vehicles": 22,
+      "pedestrians": 8
+    },
+    {
+      "time_sec": 51.25,
+      "vehicles": 25,
+      "pedestrians": 9
+    },
+    {
+      "time_sec": 51.45,
+      "vehicles": 25,
+      "pedestrians": 7
+    },
+    {
+      "time_sec": 51.65,
+      "vehicles": 24,
+      "pedestrians": 6
+    },
+    {
+      "time_sec": 51.85,
+      "vehicles": 24,
+      "pedestrians": 6
+    },
+    {
+      "time_sec": 52.05,
+      "vehicles": 23,
+      "pedestrians": 8
+    },
+    {
+      "time_sec": 52.25,
+      "vehicles": 24,
+      "pedestrians": 7
+    },
+    {
+      "time_sec": 52.45,
+      "vehicles": 27,
+      "pedestrians": 6
+    },
+    {
+      "time_sec": 52.65,
+      "vehicles": 24,
+      "pedestrians": 7
+    },
+    {
+      "time_sec": 52.85,
+      "vehicles": 25,
+      "pedestrians": 6
+    },
+    {
+      "time_sec": 53.05,
+      "vehicles": 21,
+      "pedestrians": 7
+    },
+    {
+      "time_sec": 53.25,
+      "vehicles": 22,
+      "pedestrians": 6
+    },
+    {
+      "time_sec": 53.45,
+      "vehicles": 25,
+      "pedestrians": 7
+    },
+    {
+      "time_sec": 53.65,
+      "vehicles": 23,
+      "pedestrians": 7
+    },
+    {
+      "time_sec": 53.85,
+      "vehicles": 21,
+      "pedestrians": 9
+    },
+    {
+      "time_sec": 54.05,
+      "vehicles": 22,
+      "pedestrians": 9
+    },
+    {
+      "time_sec": 54.25,
+      "vehicles": 24,
+      "pedestrians": 10
+    },
+    {
+      "time_sec": 54.45,
+      "vehicles": 23,
+      "pedestrians": 8
+    },
+    {
+      "time_sec": 54.65,
+      "vehicles": 23,
+      "pedestrians": 8
+    },
+    {
+      "time_sec": 54.85,
+      "vehicles": 21,
+      "pedestrians": 7
+    },
+    {
+      "time_sec": 55.05,
+      "vehicles": 28,
+      "pedestrians": 8
+    },
+    {
+      "time_sec": 55.26,
+      "vehicles": 25,
+      "pedestrians": 8
+    },
+    {
+      "time_sec": 55.46,
+      "vehicles": 26,
+      "pedestrians": 7
+    },
+    {
+      "time_sec": 55.66,
+      "vehicles": 26,
+      "pedestrians": 7
+    },
+    {
+      "time_sec": 55.86,
+      "vehicles": 26,
+      "pedestrians": 7
+    },
+    {
+      "time_sec": 56.06,
+      "vehicles": 30,
+      "pedestrians": 7
+    },
+    {
+      "time_sec": 56.26,
+      "vehicles": 28,
+      "pedestrians": 7
+    },
+    {
+      "time_sec": 56.46,
+      "vehicles": 28,
+      "pedestrians": 8
+    },
+    {
+      "time_sec": 56.66,
+      "vehicles": 28,
+      "pedestrians": 7
+    },
+    {
+      "time_sec": 56.86,
+      "vehicles": 28,
+      "pedestrians": 10
+    },
+    {
+      "time_sec": 57.06,
+      "vehicles": 29,
+      "pedestrians": 9
+    },
+    {
+      "time_sec": 57.26,
+      "vehicles": 25,
+      "pedestrians": 7
+    },
+    {
+      "time_sec": 57.46,
+      "vehicles": 29,
+      "pedestrians": 9
+    },
+    {
+      "time_sec": 57.66,
+      "vehicles": 23,
+      "pedestrians": 6
+    },
+    {
+      "time_sec": 57.86,
+      "vehicles": 26,
+      "pedestrians": 6
+    },
+    {
+      "time_sec": 58.06,
+      "vehicles": 25,
+      "pedestrians": 6
+    },
+    {
+      "time_sec": 58.26,
+      "vehicles": 26,
+      "pedestrians": 5
+    },
+    {
+      "time_sec": 58.46,
+      "vehicles": 26,
+      "pedestrians": 6
+    },
+    {
+      "time_sec": 58.66,
+      "vehicles": 26,
+      "pedestrians": 4
+    },
+    {
+      "time_sec": 58.86,
+      "vehicles": 24,
+      "pedestrians": 6
+    },
+    {
+      "time_sec": 59.06,
+      "vehicles": 29,
+      "pedestrians": 6
+    },
+    {
+      "time_sec": 59.26,
+      "vehicles": 31,
+      "pedestrians": 8
+    },
+    {
+      "time_sec": 59.46,
+      "vehicles": 29,
+      "pedestrians": 7
+    },
+    {
+      "time_sec": 59.66,
+      "vehicles": 27,
+      "pedestrians": 6
+    },
+    {
+      "time_sec": 59.86,
+      "vehicles": 25,
+      "pedestrians": 9
+    },
+    {
+      "time_sec": 60.06,
+      "vehicles": 27,
+      "pedestrians": 6
+    },
+    {
+      "time_sec": 60.26,
+      "vehicles": 27,
+      "pedestrians": 7
+    },
+    {
+      "time_sec": 60.46,
+      "vehicles": 25,
+      "pedestrians": 6
+    },
+    {
+      "time_sec": 60.66,
+      "vehicles": 25,
+      "pedestrians": 8
+    },
+    {
+      "time_sec": 60.86,
+      "vehicles": 26,
+      "pedestrians": 9
+    },
+    {
+      "time_sec": 61.06,
+      "vehicles": 24,
+      "pedestrians": 9
+    },
+    {
+      "time_sec": 61.26,
+      "vehicles": 23,
+      "pedestrians": 6
+    },
+    {
+      "time_sec": 61.46,
+      "vehicles": 25,
+      "pedestrians": 5
+    },
+    {
+      "time_sec": 61.66,
+      "vehicles": 26,
+      "pedestrians": 7
+    },
+    {
+      "time_sec": 61.86,
+      "vehicles": 25,
+      "pedestrians": 5
+    },
+    {
+      "time_sec": 62.06,
+      "vehicles": 26,
+      "pedestrians": 6
+    },
+    {
+      "time_sec": 62.26,
+      "vehicles": 29,
+      "pedestrians": 9
+    },
+    {
+      "time_sec": 62.46,
+      "vehicles": 26,
+      "pedestrians": 10
+    },
+    {
+      "time_sec": 62.66,
+      "vehicles": 28,
+      "pedestrians": 7
+    },
+    {
+      "time_sec": 62.86,
+      "vehicles": 27,
+      "pedestrians": 6
+    },
+    {
+      "time_sec": 63.06,
+      "vehicles": 26,
+      "pedestrians": 4
+    },
+    {
+      "time_sec": 63.26,
+      "vehicles": 26,
+      "pedestrians": 7
+    },
+    {
+      "time_sec": 63.46,
+      "vehicles": 25,
+      "pedestrians": 6
+    },
+    {
+      "time_sec": 63.66,
+      "vehicles": 26,
+      "pedestrians": 8
+    },
+    {
+      "time_sec": 63.86,
+      "vehicles": 29,
+      "pedestrians": 6
+    },
+    {
+      "time_sec": 64.06,
+      "vehicles": 27,
+      "pedestrians": 6
+    },
+    {
+      "time_sec": 64.26,
+      "vehicles": 29,
+      "pedestrians": 6
+    },
+    {
+      "time_sec": 64.46,
+      "vehicles": 32,
+      "pedestrians": 7
+    },
+    {
+      "time_sec": 64.66,
+      "vehicles": 30,
+      "pedestrians": 8
+    },
+    {
+      "time_sec": 64.86,
+      "vehicles": 26,
+      "pedestrians": 6
+    },
+    {
+      "time_sec": 65.06,
+      "vehicles": 29,
+      "pedestrians": 8
+    },
+    {
+      "time_sec": 65.27,
+      "vehicles": 29,
+      "pedestrians": 10
+    },
+    {
+      "time_sec": 65.47,
+      "vehicles": 28,
+      "pedestrians": 11
+    },
+    {
+      "time_sec": 65.67,
+      "vehicles": 28,
+      "pedestrians": 9
+    },
+    {
+      "time_sec": 65.87,
+      "vehicles": 24,
+      "pedestrians": 7
+    },
+    {
+      "time_sec": 66.07,
+      "vehicles": 22,
+      "pedestrians": 5
+    },
+    {
+      "time_sec": 66.27,
+      "vehicles": 27,
+      "pedestrians": 6
+    },
+    {
+      "time_sec": 66.47,
+      "vehicles": 27,
+      "pedestrians": 7
+    },
+    {
+      "time_sec": 66.67,
+      "vehicles": 24,
+      "pedestrians": 8
+    },
+    {
+      "time_sec": 66.87,
+      "vehicles": 26,
+      "pedestrians": 10
+    },
+    {
+      "time_sec": 67.07,
+      "vehicles": 24,
+      "pedestrians": 7
+    },
+    {
+      "time_sec": 67.27,
+      "vehicles": 27,
+      "pedestrians": 8
+    },
+    {
+      "time_sec": 67.47,
+      "vehicles": 27,
+      "pedestrians": 8
+    },
+    {
+      "time_sec": 67.67,
+      "vehicles": 29,
+      "pedestrians": 7
+    },
+    {
+      "time_sec": 67.87,
+      "vehicles": 29,
+      "pedestrians": 7
+    },
+    {
+      "time_sec": 68.07,
+      "vehicles": 25,
+      "pedestrians": 8
+    },
+    {
+      "time_sec": 68.27,
+      "vehicles": 27,
+      "pedestrians": 6
+    },
+    {
+      "time_sec": 68.47,
+      "vehicles": 29,
+      "pedestrians": 8
+    },
+    {
+      "time_sec": 68.67,
+      "vehicles": 28,
+      "pedestrians": 9
+    },
+    {
+      "time_sec": 68.87,
+      "vehicles": 26,
+      "pedestrians": 8
+    },
+    {
+      "time_sec": 69.07,
+      "vehicles": 28,
+      "pedestrians": 9
+    },
+    {
+      "time_sec": 69.27,
+      "vehicles": 28,
+      "pedestrians": 10
+    },
+    {
+      "time_sec": 69.47,
+      "vehicles": 30,
+      "pedestrians": 8
+    },
+    {
+      "time_sec": 69.67,
+      "vehicles": 28,
+      "pedestrians": 7
+    },
+    {
+      "time_sec": 69.87,
+      "vehicles": 28,
+      "pedestrians": 10
+    },
+    {
+      "time_sec": 70.07,
+      "vehicles": 26,
+      "pedestrians": 11
+    },
+    {
+      "time_sec": 70.27,
+      "vehicles": 23,
+      "pedestrians": 10
+    },
+    {
+      "time_sec": 70.47,
+      "vehicles": 24,
+      "pedestrians": 11
+    },
+    {
+      "time_sec": 70.67,
+      "vehicles": 24,
+      "pedestrians": 12
+    },
+    {
+      "time_sec": 70.87,
+      "vehicles": 22,
+      "pedestrians": 12
+    },
+    {
+      "time_sec": 71.07,
+      "vehicles": 24,
+      "pedestrians": 11
+    },
+    {
+      "time_sec": 71.27,
+      "vehicles": 22,
+      "pedestrians": 14
+    },
+    {
+      "time_sec": 71.47,
+      "vehicles": 20,
+      "pedestrians": 15
+    },
+    {
+      "time_sec": 71.67,
+      "vehicles": 24,
+      "pedestrians": 14
+    },
+    {
+      "time_sec": 71.87,
+      "vehicles": 24,
+      "pedestrians": 14
+    },
+    {
+      "time_sec": 72.07,
+      "vehicles": 22,
+      "pedestrians": 12
+    },
+    {
+      "time_sec": 72.27,
+      "vehicles": 22,
+      "pedestrians": 14
+    },
+    {
+      "time_sec": 72.47,
+      "vehicles": 23,
+      "pedestrians": 15
+    },
+    {
+      "time_sec": 72.67,
+      "vehicles": 20,
+      "pedestrians": 15
+    },
+    {
+      "time_sec": 72.87,
+      "vehicles": 22,
+      "pedestrians": 15
+    },
+    {
+      "time_sec": 73.07,
+      "vehicles": 17,
+      "pedestrians": 11
+    },
+    {
+      "time_sec": 73.27,
+      "vehicles": 20,
+      "pedestrians": 13
+    },
+    {
+      "time_sec": 73.47,
+      "vehicles": 17,
+      "pedestrians": 17
+    },
+    {
+      "time_sec": 73.67,
+      "vehicles": 20,
+      "pedestrians": 11
+    },
+    {
+      "time_sec": 73.87,
+      "vehicles": 22,
+      "pedestrians": 9
+    },
+    {
+      "time_sec": 74.07,
+      "vehicles": 24,
+      "pedestrians": 13
+    },
+    {
+      "time_sec": 74.27,
+      "vehicles": 26,
+      "pedestrians": 11
+    },
+    {
+      "time_sec": 74.47,
+      "vehicles": 25,
+      "pedestrians": 11
+    },
+    {
+      "time_sec": 74.67,
+      "vehicles": 26,
+      "pedestrians": 15
+    },
+    {
+      "time_sec": 74.87,
+      "vehicles": 25,
+      "pedestrians": 13
+    },
+    {
+      "time_sec": 75.08,
+      "vehicles": 24,
+      "pedestrians": 14
+    },
+    {
+      "time_sec": 75.28,
+      "vehicles": 24,
+      "pedestrians": 14
+    },
+    {
+      "time_sec": 75.48,
+      "vehicles": 25,
+      "pedestrians": 14
+    },
+    {
+      "time_sec": 75.68,
+      "vehicles": 23,
+      "pedestrians": 13
+    },
+    {
+      "time_sec": 75.88,
+      "vehicles": 23,
+      "pedestrians": 13
+    },
+    {
+      "time_sec": 76.08,
+      "vehicles": 22,
+      "pedestrians": 14
+    },
+    {
+      "time_sec": 76.28,
+      "vehicles": 25,
+      "pedestrians": 12
+    },
+    {
+      "time_sec": 76.48,
+      "vehicles": 25,
+      "pedestrians": 12
+    },
+    {
+      "time_sec": 76.68,
+      "vehicles": 26,
+      "pedestrians": 14
+    },
+    {
+      "time_sec": 76.88,
+      "vehicles": 25,
+      "pedestrians": 11
+    },
+    {
+      "time_sec": 77.08,
+      "vehicles": 22,
+      "pedestrians": 11
+    },
+    {
+      "time_sec": 77.28,
+      "vehicles": 25,
+      "pedestrians": 12
+    },
+    {
+      "time_sec": 77.48,
+      "vehicles": 21,
+      "pedestrians": 13
+    },
+    {
+      "time_sec": 77.68,
+      "vehicles": 27,
+      "pedestrians": 12
+    },
+    {
+      "time_sec": 77.88,
+      "vehicles": 24,
+      "pedestrians": 13
+    },
+    {
+      "time_sec": 78.08,
+      "vehicles": 22,
+      "pedestrians": 13
+    },
+    {
+      "time_sec": 78.28,
+      "vehicles": 22,
+      "pedestrians": 11
+    },
+    {
+      "time_sec": 78.48,
+      "vehicles": 24,
+      "pedestrians": 8
+    },
+    {
+      "time_sec": 78.68,
+      "vehicles": 24,
+      "pedestrians": 11
+    },
+    {
+      "time_sec": 78.88,
+      "vehicles": 23,
+      "pedestrians": 10
+    },
+    {
+      "time_sec": 79.08,
+      "vehicles": 20,
+      "pedestrians": 10
+    },
+    {
+      "time_sec": 79.28,
+      "vehicles": 23,
+      "pedestrians": 10
+    },
+    {
+      "time_sec": 79.48,
+      "vehicles": 21,
+      "pedestrians": 12
+    },
+    {
+      "time_sec": 79.68,
+      "vehicles": 20,
+      "pedestrians": 14
+    },
+    {
+      "time_sec": 79.88,
+      "vehicles": 23,
+      "pedestrians": 12
+    },
+    {
+      "time_sec": 80.08,
+      "vehicles": 21,
+      "pedestrians": 12
+    },
+    {
+      "time_sec": 80.28,
+      "vehicles": 19,
+      "pedestrians": 12
+    },
+    {
+      "time_sec": 80.48,
+      "vehicles": 24,
+      "pedestrians": 11
+    },
+    {
+      "time_sec": 80.68,
+      "vehicles": 23,
+      "pedestrians": 11
+    },
+    {
+      "time_sec": 80.88,
+      "vehicles": 22,
+      "pedestrians": 12
+    },
+    {
+      "time_sec": 81.08,
+      "vehicles": 21,
+      "pedestrians": 9
+    },
+    {
+      "time_sec": 81.28,
+      "vehicles": 20,
+      "pedestrians": 10
+    },
+    {
+      "time_sec": 81.48,
+      "vehicles": 23,
+      "pedestrians": 13
+    },
+    {
+      "time_sec": 81.68,
+      "vehicles": 23,
+      "pedestrians": 13
+    },
+    {
+      "time_sec": 81.88,
+      "vehicles": 19,
+      "pedestrians": 13
+    },
+    {
+      "time_sec": 82.08,
+      "vehicles": 21,
+      "pedestrians": 10
+    },
+    {
+      "time_sec": 82.28,
+      "vehicles": 21,
+      "pedestrians": 10
+    },
+    {
+      "time_sec": 82.48,
+      "vehicles": 20,
+      "pedestrians": 15
+    },
+    {
+      "time_sec": 82.68,
+      "vehicles": 20,
+      "pedestrians": 16
+    },
+    {
+      "time_sec": 82.88,
+      "vehicles": 22,
+      "pedestrians": 11
+    },
+    {
+      "time_sec": 83.08,
+      "vehicles": 21,
+      "pedestrians": 12
+    },
+    {
+      "time_sec": 83.28,
+      "vehicles": 21,
+      "pedestrians": 9
+    },
+    {
+      "time_sec": 83.48,
+      "vehicles": 20,
+      "pedestrians": 8
+    },
+    {
+      "time_sec": 83.68,
+      "vehicles": 20,
+      "pedestrians": 9
+    },
+    {
+      "time_sec": 83.88,
+      "vehicles": 19,
+      "pedestrians": 13
+    },
+    {
+      "time_sec": 84.08,
+      "vehicles": 20,
+      "pedestrians": 11
+    },
+    {
+      "time_sec": 84.28,
+      "vehicles": 19,
+      "pedestrians": 7
+    },
+    {
+      "time_sec": 84.48,
+      "vehicles": 20,
+      "pedestrians": 9
+    },
+    {
+      "time_sec": 84.68,
+      "vehicles": 20,
+      "pedestrians": 10
+    },
+    {
+      "time_sec": 84.88,
+      "vehicles": 20,
+      "pedestrians": 14
+    },
+    {
+      "time_sec": 85.09,
+      "vehicles": 20,
+      "pedestrians": 12
+    },
+    {
+      "time_sec": 85.29,
+      "vehicles": 19,
+      "pedestrians": 11
+    },
+    {
+      "time_sec": 85.49,
+      "vehicles": 19,
+      "pedestrians": 10
+    },
+    {
+      "time_sec": 85.69,
+      "vehicles": 19,
+      "pedestrians": 14
+    },
+    {
+      "time_sec": 85.89,
+      "vehicles": 21,
+      "pedestrians": 12
+    },
+    {
+      "time_sec": 86.09,
+      "vehicles": 19,
+      "pedestrians": 11
+    },
+    {
+      "time_sec": 86.29,
+      "vehicles": 20,
+      "pedestrians": 9
+    },
+    {
+      "time_sec": 86.49,
+      "vehicles": 21,
+      "pedestrians": 10
+    },
+    {
+      "time_sec": 86.69,
+      "vehicles": 19,
+      "pedestrians": 7
+    },
+    {
+      "time_sec": 86.89,
+      "vehicles": 20,
+      "pedestrians": 12
+    },
+    {
+      "time_sec": 87.09,
+      "vehicles": 17,
+      "pedestrians": 13
+    },
+    {
+      "time_sec": 87.29,
+      "vehicles": 19,
+      "pedestrians": 12
+    },
+    {
+      "time_sec": 87.49,
+      "vehicles": 18,
+      "pedestrians": 12
+    },
+    {
+      "time_sec": 87.69,
+      "vehicles": 19,
+      "pedestrians": 14
+    },
+    {
+      "time_sec": 87.89,
+      "vehicles": 18,
+      "pedestrians": 14
+    },
+    {
+      "time_sec": 88.09,
+      "vehicles": 20,
+      "pedestrians": 13
+    },
+    {
+      "time_sec": 88.29,
+      "vehicles": 19,
+      "pedestrians": 11
+    },
+    {
+      "time_sec": 88.49,
+      "vehicles": 19,
+      "pedestrians": 11
+    },
+    {
+      "time_sec": 88.69,
+      "vehicles": 19,
+      "pedestrians": 13
+    },
+    {
+      "time_sec": 88.89,
+      "vehicles": 21,
+      "pedestrians": 13
+    },
+    {
+      "time_sec": 89.09,
+      "vehicles": 18,
+      "pedestrians": 13
+    },
+    {
+      "time_sec": 89.29,
+      "vehicles": 19,
+      "pedestrians": 13
+    },
+    {
+      "time_sec": 89.49,
+      "vehicles": 18,
+      "pedestrians": 9
+    },
+    {
+      "time_sec": 89.69,
+      "vehicles": 18,
+      "pedestrians": 14
+    },
+    {
+      "time_sec": 89.89,
+      "vehicles": 18,
+      "pedestrians": 14
+    },
+    {
+      "time_sec": 90.09,
+      "vehicles": 18,
+      "pedestrians": 15
+    },
+    {
+      "time_sec": 90.29,
+      "vehicles": 18,
+      "pedestrians": 12
+    },
+    {
+      "time_sec": 90.49,
+      "vehicles": 18,
+      "pedestrians": 14
+    },
+    {
+      "time_sec": 90.69,
+      "vehicles": 18,
+      "pedestrians": 13
+    },
+    {
+      "time_sec": 90.89,
+      "vehicles": 17,
+      "pedestrians": 15
+    },
+    {
+      "time_sec": 91.09,
+      "vehicles": 17,
+      "pedestrians": 14
+    },
+    {
+      "time_sec": 91.29,
+      "vehicles": 16,
+      "pedestrians": 11
+    },
+    {
+      "time_sec": 91.49,
+      "vehicles": 17,
+      "pedestrians": 12
+    },
+    {
+      "time_sec": 91.69,
+      "vehicles": 17,
+      "pedestrians": 12
+    },
+    {
+      "time_sec": 91.89,
+      "vehicles": 16,
+      "pedestrians": 14
+    },
+    {
+      "time_sec": 92.09,
+      "vehicles": 18,
+      "pedestrians": 12
+    },
+    {
+      "time_sec": 92.29,
+      "vehicles": 18,
+      "pedestrians": 10
+    },
+    {
+      "time_sec": 92.49,
+      "vehicles": 18,
+      "pedestrians": 10
+    },
+    {
+      "time_sec": 92.69,
+      "vehicles": 19,
+      "pedestrians": 9
+    },
+    {
+      "time_sec": 92.89,
+      "vehicles": 19,
+      "pedestrians": 8
+    },
+    {
+      "time_sec": 93.09,
+      "vehicles": 20,
+      "pedestrians": 9
+    },
+    {
+      "time_sec": 93.29,
+      "vehicles": 18,
+      "pedestrians": 11
+    },
+    {
+      "time_sec": 93.49,
+      "vehicles": 17,
+      "pedestrians": 13
+    },
+    {
+      "time_sec": 93.69,
+      "vehicles": 17,
+      "pedestrians": 9
+    },
+    {
+      "time_sec": 93.89,
+      "vehicles": 19,
+      "pedestrians": 7
+    },
+    {
+      "time_sec": 94.09,
+      "vehicles": 20,
+      "pedestrians": 6
+    },
+    {
+      "time_sec": 94.29,
+      "vehicles": 22,
+      "pedestrians": 8
+    },
+    {
+      "time_sec": 94.49,
+      "vehicles": 19,
+      "pedestrians": 11
+    },
+    {
+      "time_sec": 94.69,
+      "vehicles": 19,
+      "pedestrians": 8
+    },
+    {
+      "time_sec": 94.89,
+      "vehicles": 20,
+      "pedestrians": 8
+    },
+    {
+      "time_sec": 95.09,
+      "vehicles": 17,
+      "pedestrians": 9
+    },
+    {
+      "time_sec": 95.3,
+      "vehicles": 19,
+      "pedestrians": 6
+    },
+    {
+      "time_sec": 95.5,
+      "vehicles": 21,
+      "pedestrians": 8
+    },
+    {
+      "time_sec": 95.7,
+      "vehicles": 19,
+      "pedestrians": 6
+    },
+    {
+      "time_sec": 95.9,
+      "vehicles": 22,
+      "pedestrians": 8
+    },
+    {
+      "time_sec": 96.1,
+      "vehicles": 23,
+      "pedestrians": 7
+    },
+    {
+      "time_sec": 96.3,
+      "vehicles": 23,
+      "pedestrians": 9
+    },
+    {
+      "time_sec": 96.5,
+      "vehicles": 20,
+      "pedestrians": 6
+    },
+    {
+      "time_sec": 96.7,
+      "vehicles": 21,
+      "pedestrians": 11
+    },
+    {
+      "time_sec": 96.9,
+      "vehicles": 20,
+      "pedestrians": 9
+    },
+    {
+      "time_sec": 97.1,
+      "vehicles": 21,
+      "pedestrians": 12
+    },
+    {
+      "time_sec": 97.3,
+      "vehicles": 19,
+      "pedestrians": 9
+    },
+    {
+      "time_sec": 97.5,
+      "vehicles": 20,
+      "pedestrians": 9
+    },
+    {
+      "time_sec": 97.7,
+      "vehicles": 22,
+      "pedestrians": 10
+    },
+    {
+      "time_sec": 97.9,
+      "vehicles": 23,
+      "pedestrians": 10
+    },
+    {
+      "time_sec": 98.1,
+      "vehicles": 25,
+      "pedestrians": 8
+    },
+    {
+      "time_sec": 98.3,
+      "vehicles": 24,
+      "pedestrians": 9
+    },
+    {
+      "time_sec": 98.5,
+      "vehicles": 27,
+      "pedestrians": 11
+    },
+    {
+      "time_sec": 98.7,
+      "vehicles": 23,
+      "pedestrians": 8
+    },
+    {
+      "time_sec": 98.9,
+      "vehicles": 26,
+      "pedestrians": 10
+    },
+    {
+      "time_sec": 99.1,
+      "vehicles": 23,
+      "pedestrians": 13
+    },
+    {
+      "time_sec": 99.3,
+      "vehicles": 21,
+      "pedestrians": 14
+    },
+    {
+      "time_sec": 99.5,
+      "vehicles": 21,
+      "pedestrians": 8
+    },
+    {
+      "time_sec": 99.7,
+      "vehicles": 21,
+      "pedestrians": 11
+    },
+    {
+      "time_sec": 99.9,
+      "vehicles": 21,
+      "pedestrians": 10
+    },
+    {
+      "time_sec": 100.1,
+      "vehicles": 22,
+      "pedestrians": 13
+    },
+    {
+      "time_sec": 100.3,
+      "vehicles": 22,
+      "pedestrians": 12
+    },
+    {
+      "time_sec": 100.5,
+      "vehicles": 22,
+      "pedestrians": 8
+    },
+    {
+      "time_sec": 100.7,
+      "vehicles": 25,
+      "pedestrians": 10
+    },
+    {
+      "time_sec": 100.9,
+      "vehicles": 22,
+      "pedestrians": 5
+    },
+    {
+      "time_sec": 101.1,
+      "vehicles": 24,
+      "pedestrians": 11
+    },
+    {
+      "time_sec": 101.3,
+      "vehicles": 24,
+      "pedestrians": 10
+    },
+    {
+      "time_sec": 101.5,
+      "vehicles": 24,
+      "pedestrians": 10
+    },
+    {
+      "time_sec": 101.7,
+      "vehicles": 24,
+      "pedestrians": 10
+    },
+    {
+      "time_sec": 101.9,
+      "vehicles": 24,
+      "pedestrians": 8
+    },
+    {
+      "time_sec": 102.1,
+      "vehicles": 23,
+      "pedestrians": 9
+    },
+    {
+      "time_sec": 102.3,
+      "vehicles": 23,
+      "pedestrians": 11
+    },
+    {
+      "time_sec": 102.5,
+      "vehicles": 23,
+      "pedestrians": 12
+    },
+    {
+      "time_sec": 102.7,
+      "vehicles": 25,
+      "pedestrians": 10
+    },
+    {
+      "time_sec": 102.9,
+      "vehicles": 22,
+      "pedestrians": 10
+    },
+    {
+      "time_sec": 103.1,
+      "vehicles": 23,
+      "pedestrians": 11
+    },
+    {
+      "time_sec": 103.3,
+      "vehicles": 22,
+      "pedestrians": 11
+    },
+    {
+      "time_sec": 103.5,
+      "vehicles": 20,
+      "pedestrians": 12
+    },
+    {
+      "time_sec": 103.7,
+      "vehicles": 22,
+      "pedestrians": 8
+    },
+    {
+      "time_sec": 103.9,
+      "vehicles": 21,
+      "pedestrians": 9
+    },
+    {
+      "time_sec": 104.1,
+      "vehicles": 24,
+      "pedestrians": 10
+    },
+    {
+      "time_sec": 104.3,
+      "vehicles": 23,
+      "pedestrians": 13
+    },
+    {
+      "time_sec": 104.5,
+      "vehicles": 22,
+      "pedestrians": 12
+    },
+    {
+      "time_sec": 104.7,
+      "vehicles": 23,
+      "pedestrians": 12
+    },
+    {
+      "time_sec": 104.9,
+      "vehicles": 21,
+      "pedestrians": 11
+    },
+    {
+      "time_sec": 105.11,
+      "vehicles": 26,
+      "pedestrians": 13
+    },
+    {
+      "time_sec": 105.31,
+      "vehicles": 20,
+      "pedestrians": 10
+    },
+    {
+      "time_sec": 105.51,
+      "vehicles": 22,
+      "pedestrians": 10
+    },
+    {
+      "time_sec": 105.71,
+      "vehicles": 22,
+      "pedestrians": 11
+    },
+    {
+      "time_sec": 105.91,
+      "vehicles": 22,
+      "pedestrians": 13
+    },
+    {
+      "time_sec": 106.11,
+      "vehicles": 23,
+      "pedestrians": 13
+    },
+    {
+      "time_sec": 106.31,
+      "vehicles": 22,
+      "pedestrians": 14
+    },
+    {
+      "time_sec": 106.51,
+      "vehicles": 21,
+      "pedestrians": 18
+    },
+    {
+      "time_sec": 106.71,
+      "vehicles": 22,
+      "pedestrians": 12
+    },
+    {
+      "time_sec": 106.91,
+      "vehicles": 21,
+      "pedestrians": 14
+    },
+    {
+      "time_sec": 107.11,
+      "vehicles": 22,
+      "pedestrians": 15
+    },
+    {
+      "time_sec": 107.31,
+      "vehicles": 23,
+      "pedestrians": 14
+    },
+    {
+      "time_sec": 107.51,
+      "vehicles": 21,
+      "pedestrians": 12
+    },
+    {
+      "time_sec": 107.71,
+      "vehicles": 23,
+      "pedestrians": 14
+    },
+    {
+      "time_sec": 107.91,
+      "vehicles": 20,
+      "pedestrians": 11
+    },
+    {
+      "time_sec": 108.11,
+      "vehicles": 23,
+      "pedestrians": 11
+    },
+    {
+      "time_sec": 108.31,
+      "vehicles": 21,
+      "pedestrians": 13
+    },
+    {
+      "time_sec": 108.51,
+      "vehicles": 23,
+      "pedestrians": 13
+    },
+    {
+      "time_sec": 108.71,
+      "vehicles": 25,
+      "pedestrians": 12
+    },
+    {
+      "time_sec": 108.91,
+      "vehicles": 24,
+      "pedestrians": 13
+    },
+    {
+      "time_sec": 109.11,
+      "vehicles": 23,
+      "pedestrians": 13
+    },
+    {
+      "time_sec": 109.31,
+      "vehicles": 23,
+      "pedestrians": 14
+    },
+    {
+      "time_sec": 109.51,
+      "vehicles": 23,
+      "pedestrians": 14
+    },
+    {
+      "time_sec": 109.71,
+      "vehicles": 21,
+      "pedestrians": 13
+    },
+    {
+      "time_sec": 109.91,
+      "vehicles": 24,
+      "pedestrians": 13
+    },
+    {
+      "time_sec": 110.11,
+      "vehicles": 22,
+      "pedestrians": 14
+    },
+    {
+      "time_sec": 110.31,
+      "vehicles": 23,
+      "pedestrians": 14
+    },
+    {
+      "time_sec": 110.51,
+      "vehicles": 20,
+      "pedestrians": 13
+    },
+    {
+      "time_sec": 110.71,
+      "vehicles": 22,
+      "pedestrians": 15
+    },
+    {
+      "time_sec": 110.91,
+      "vehicles": 25,
+      "pedestrians": 13
+    },
+    {
+      "time_sec": 111.11,
+      "vehicles": 24,
+      "pedestrians": 13
+    },
+    {
+      "time_sec": 111.31,
+      "vehicles": 22,
+      "pedestrians": 13
+    },
+    {
+      "time_sec": 111.51,
+      "vehicles": 23,
+      "pedestrians": 12
+    },
+    {
+      "time_sec": 111.71,
+      "vehicles": 21,
+      "pedestrians": 13
+    },
+    {
+      "time_sec": 111.91,
+      "vehicles": 24,
+      "pedestrians": 12
+    },
+    {
+      "time_sec": 112.11,
+      "vehicles": 23,
+      "pedestrians": 12
+    },
+    {
+      "time_sec": 112.31,
+      "vehicles": 23,
+      "pedestrians": 11
+    },
+    {
+      "time_sec": 112.51,
+      "vehicles": 21,
+      "pedestrians": 10
+    },
+    {
+      "time_sec": 112.71,
+      "vehicles": 22,
+      "pedestrians": 11
+    },
+    {
+      "time_sec": 112.91,
+      "vehicles": 21,
+      "pedestrians": 9
+    },
+    {
+      "time_sec": 113.11,
+      "vehicles": 21,
+      "pedestrians": 8
+    },
+    {
+      "time_sec": 113.31,
+      "vehicles": 21,
+      "pedestrians": 8
+    },
+    {
+      "time_sec": 113.51,
+      "vehicles": 21,
+      "pedestrians": 11
+    },
+    {
+      "time_sec": 113.71,
+      "vehicles": 22,
+      "pedestrians": 11
+    },
+    {
+      "time_sec": 113.91,
+      "vehicles": 22,
+      "pedestrians": 11
+    },
+    {
+      "time_sec": 114.11,
+      "vehicles": 22,
+      "pedestrians": 11
+    },
+    {
+      "time_sec": 114.31,
+      "vehicles": 22,
+      "pedestrians": 10
+    },
+    {
+      "time_sec": 114.51,
+      "vehicles": 22,
+      "pedestrians": 10
+    },
+    {
+      "time_sec": 114.71,
+      "vehicles": 20,
+      "pedestrians": 10
+    },
+    {
+      "time_sec": 114.91,
+      "vehicles": 23,
+      "pedestrians": 11
+    },
+    {
+      "time_sec": 115.12,
+      "vehicles": 22,
+      "pedestrians": 11
+    },
+    {
+      "time_sec": 115.32,
+      "vehicles": 24,
+      "pedestrians": 13
+    },
+    {
+      "time_sec": 115.52,
+      "vehicles": 21,
+      "pedestrians": 11
+    },
+    {
+      "time_sec": 115.72,
+      "vehicles": 22,
+      "pedestrians": 11
+    },
+    {
+      "time_sec": 115.92,
+      "vehicles": 21,
+      "pedestrians": 9
+    },
+    {
+      "time_sec": 116.12,
+      "vehicles": 22,
+      "pedestrians": 10
+    },
+    {
+      "time_sec": 116.32,
+      "vehicles": 23,
+      "pedestrians": 11
+    },
+    {
+      "time_sec": 116.52,
+      "vehicles": 22,
+      "pedestrians": 13
+    },
+    {
+      "time_sec": 116.72,
+      "vehicles": 24,
+      "pedestrians": 13
+    },
+    {
+      "time_sec": 116.92,
+      "vehicles": 23,
+      "pedestrians": 13
+    },
+    {
+      "time_sec": 117.12,
+      "vehicles": 22,
+      "pedestrians": 10
+    },
+    {
+      "time_sec": 117.32,
+      "vehicles": 22,
+      "pedestrians": 10
+    },
+    {
+      "time_sec": 117.52,
+      "vehicles": 21,
+      "pedestrians": 11
+    },
+    {
+      "time_sec": 117.72,
+      "vehicles": 17,
+      "pedestrians": 15
+    },
+    {
+      "time_sec": 117.92,
+      "vehicles": 21,
+      "pedestrians": 12
+    },
+    {
+      "time_sec": 118.12,
+      "vehicles": 22,
+      "pedestrians": 13
+    },
+    {
+      "time_sec": 118.32,
+      "vehicles": 21,
+      "pedestrians": 13
+    },
+    {
+      "time_sec": 118.52,
+      "vehicles": 21,
+      "pedestrians": 13
+    },
+    {
+      "time_sec": 118.72,
+      "vehicles": 19,
+      "pedestrians": 13
+    },
+    {
+      "time_sec": 118.92,
+      "vehicles": 21,
+      "pedestrians": 14
+    },
+    {
+      "time_sec": 119.12,
+      "vehicles": 17,
+      "pedestrians": 13
+    },
+    {
+      "time_sec": 119.32,
+      "vehicles": 19,
+      "pedestrians": 12
+    },
+    {
+      "time_sec": 119.52,
+      "vehicles": 18,
+      "pedestrians": 12
+    },
+    {
+      "time_sec": 119.72,
+      "vehicles": 20,
+      "pedestrians": 13
+    },
+    {
+      "time_sec": 119.92,
+      "vehicles": 23,
+      "pedestrians": 13
+    },
+    {
+      "time_sec": 120.12,
+      "vehicles": 21,
+      "pedestrians": 13
+    },
+    {
+      "time_sec": 120.32,
+      "vehicles": 19,
+      "pedestrians": 11
+    },
+    {
+      "time_sec": 120.52,
+      "vehicles": 22,
+      "pedestrians": 11
+    },
+    {
+      "time_sec": 120.72,
+      "vehicles": 21,
+      "pedestrians": 12
+    },
+    {
+      "time_sec": 120.92,
+      "vehicles": 24,
+      "pedestrians": 11
+    },
+    {
+      "time_sec": 121.12,
+      "vehicles": 19,
+      "pedestrians": 10
+    },
+    {
+      "time_sec": 121.32,
+      "vehicles": 22,
+      "pedestrians": 11
+    },
+    {
+      "time_sec": 121.52,
+      "vehicles": 22,
+      "pedestrians": 11
+    },
+    {
+      "time_sec": 121.72,
+      "vehicles": 20,
+      "pedestrians": 11
+    },
+    {
+      "time_sec": 121.92,
+      "vehicles": 22,
+      "pedestrians": 11
+    },
+    {
+      "time_sec": 122.12,
+      "vehicles": 17,
+      "pedestrians": 13
+    },
+    {
+      "time_sec": 122.32,
+      "vehicles": 20,
+      "pedestrians": 10
+    },
+    {
+      "time_sec": 122.52,
+      "vehicles": 20,
+      "pedestrians": 12
+    },
+    {
+      "time_sec": 122.72,
+      "vehicles": 16,
+      "pedestrians": 11
+    },
+    {
+      "time_sec": 122.92,
+      "vehicles": 17,
+      "pedestrians": 13
+    },
+    {
+      "time_sec": 123.12,
+      "vehicles": 16,
+      "pedestrians": 11
+    },
+    {
+      "time_sec": 123.32,
+      "vehicles": 19,
+      "pedestrians": 10
+    },
+    {
+      "time_sec": 123.52,
+      "vehicles": 19,
+      "pedestrians": 10
+    },
+    {
+      "time_sec": 123.72,
+      "vehicles": 18,
+      "pedestrians": 14
+    },
+    {
+      "time_sec": 123.92,
+      "vehicles": 20,
+      "pedestrians": 10
+    },
+    {
+      "time_sec": 124.12,
+      "vehicles": 20,
+      "pedestrians": 8
+    },
+    {
+      "time_sec": 124.32,
+      "vehicles": 18,
+      "pedestrians": 9
+    },
+    {
+      "time_sec": 124.52,
+      "vehicles": 17,
+      "pedestrians": 9
+    },
+    {
+      "time_sec": 124.72,
+      "vehicles": 20,
+      "pedestrians": 10
+    },
+    {
+      "time_sec": 124.92,
+      "vehicles": 23,
+      "pedestrians": 6
+    },
+    {
+      "time_sec": 125.12,
+      "vehicles": 22,
+      "pedestrians": 7
+    },
+    {
+      "time_sec": 125.33,
+      "vehicles": 20,
+      "pedestrians": 8
+    },
+    {
+      "time_sec": 125.53,
+      "vehicles": 20,
+      "pedestrians": 8
+    },
+    {
+      "time_sec": 125.73,
+      "vehicles": 20,
+      "pedestrians": 7
+    },
+    {
+      "time_sec": 125.93,
+      "vehicles": 20,
+      "pedestrians": 9
+    },
+    {
+      "time_sec": 126.13,
+      "vehicles": 21,
+      "pedestrians": 6
+    },
+    {
+      "time_sec": 126.33,
+      "vehicles": 15,
+      "pedestrians": 8
+    },
+    {
+      "time_sec": 126.53,
+      "vehicles": 21,
+      "pedestrians": 9
+    },
+    {
+      "time_sec": 126.73,
+      "vehicles": 22,
+      "pedestrians": 8
+    },
+    {
+      "time_sec": 126.93,
+      "vehicles": 20,
+      "pedestrians": 7
+    },
+    {
+      "time_sec": 127.13,
+      "vehicles": 18,
+      "pedestrians": 10
+    },
+    {
+      "time_sec": 127.33,
+      "vehicles": 21,
+      "pedestrians": 11
+    },
+    {
+      "time_sec": 127.53,
+      "vehicles": 16,
+      "pedestrians": 9
+    }
+  ]
+}

@@ -1,0 +1,20 @@
+# Video files (too large for git)
+*.mp4
+*.MP4
+*.zip
+*.rar
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+.ipynb_checkpoints/
+.venv/
+env/
+venv/
+
+# System
+.DS_Store
+Thumbs.db
+wiut_cv_scripts/
+__MACOSX/
