@@ -94,6 +94,7 @@ with st.sidebar:
 BASE_DIR = Path(__file__).resolve().parent
 PRED_PATH = BASE_DIR / "predictions_samples.json"
 EDA_PATH = BASE_DIR / "eda_output" / "eda_time_series.json"
+TEST_FULL_PATH = BASE_DIR / "test_videos" / "test_results_full.json"
 
 @st.cache_data
 def load_sample_predictions():
@@ -109,8 +110,16 @@ def load_eda_data():
             return json.load(f)
     return None
 
+@st.cache_data
+def load_test_videos_data():
+    if TEST_FULL_PATH.exists():
+        with open(TEST_FULL_PATH) as f:
+            return json.load(f)
+    return {}
+
 pred_data = load_sample_predictions()
 eda_data = load_eda_data()
+test_videos_data = load_test_videos_data()
 
 
 # ==============================================================================
@@ -118,80 +127,155 @@ eda_data = load_eda_data()
 # ==============================================================================
 if menu == "🚀 Live Interactive Demo":
     st.markdown('<div class="main-header">🚀 Live Traffic Event Detection & Risk Demo</div>', unsafe_allow_html=True)
-    st.markdown('<div class="sub-header">Upload any CCTV traffic video (.mp4) to detect temporal events and stream frame-by-frame causal risk.</div>', unsafe_allow_html=True)
+    st.markdown('<div class="sub-header">Select from 5 safe benchmark CCTV road camera clips or upload any custom .mp4 to run offline detection & causal risk anticipation.</div>', unsafe_allow_html=True)
 
-    col_up, col_info = st.columns([2, 1])
-    with col_up:
-        uploaded_file = st.file_uploader("Upload Traffic Video (.mp4)", type=["mp4"], help="Recommended length: up to 2.5 minutes for rapid inference.")
+    col_ctrl, col_info = st.columns([2, 1])
+    with col_ctrl:
+        source_mode = st.selectbox(
+            "Select Video Source",
+            [
+                "🎯 Official Hackathon CCTV (sample_004.mp4 — 127.6s, F1=1.000)",
+                "📹 External Test 1: Intel Road Vehicle Camera (intel_car_detection.mp4 — 30.2s)",
+                "📹 External Test 2: Intel Crosswalk & Cyclist Junction (intel_person_bicycle_car.mp4 — 53.9s)",
+                "📹 External Test 3: Highway Multi-Lane Traffic Flow (highway_traffic_flow.mp4 — 14.9s)",
+                "📹 External Test 4: Traffic Signal Violation Camera (traffic_violation_camera.mp4 — 27.2s)",
+                "📹 External Test 5: OpenCV Pedestrian Crossing Surveillance (opencv_pedestrian_surveillance.mp4 — 79.5s)",
+                "📁 Upload Custom .mp4 Video"
+            ]
+        )
+
+        uploaded_file = None
+        target_video_path = None
+        is_preset = False
+        preset_key = ""
+
+        if "sample_004.mp4" in source_mode:
+            target_video_path = str(BASE_DIR / "samples" / "sample_004.mp4")
+            is_preset = True
+            preset_key = "sample_004.mp4"
+        elif "intel_car_detection" in source_mode:
+            target_video_path = str(BASE_DIR / "test_videos" / "intel_car_detection.mp4")
+            is_preset = True
+            preset_key = "intel_car_detection.mp4"
+        elif "intel_person_bicycle_car" in source_mode:
+            target_video_path = str(BASE_DIR / "test_videos" / "intel_person_bicycle_car.mp4")
+            is_preset = True
+            preset_key = "intel_person_bicycle_car.mp4"
+        elif "highway_traffic_flow" in source_mode:
+            target_video_path = str(BASE_DIR / "test_videos" / "highway_traffic_flow.mp4")
+            is_preset = True
+            preset_key = "highway_traffic_flow.mp4"
+        elif "traffic_violation_camera" in source_mode:
+            target_video_path = str(BASE_DIR / "test_videos" / "traffic_violation_camera.mp4")
+            is_preset = True
+            preset_key = "traffic_violation_camera.mp4"
+        elif "opencv_pedestrian" in source_mode:
+            target_video_path = str(BASE_DIR / "test_videos" / "opencv_pedestrian_surveillance.mp4")
+            is_preset = True
+            preset_key = "opencv_pedestrian_surveillance.mp4"
+        else:
+            uploaded_file = st.file_uploader("Upload Traffic Video (.mp4)", type=["mp4"], help="Recommended length: up to 2.5 minutes for rapid inference.")
+            if uploaded_file is not None:
+                tfile = tempfile.NamedTemporaryFile(delete=False, suffix=".mp4")
+                tfile.write(uploaded_file.read())
+                target_video_path = tfile.name
+                st.success(f"Uploaded: {uploaded_file.name} ({uploaded_file.size / (1024*1024):.1f} MB)")
+
     with col_info:
         st.markdown("""
         <div class="metric-card">
-            <h4>Demo Capabilities</h4>
+            <h4>Evaluation Highlights</h4>
             <span class="badge badge-blue">Part A: 14 Classes</span>
             <span class="badge badge-green">Part B: Causal Risk</span>
-            <span class="badge badge-purple">Plotly Interactive</span>
+            <span class="badge badge-purple">Time Budget: ≤ 3×</span>
             <p style="margin-top:0.6rem;font-size:0.85rem;color:#cbd5e1;">
-            Processes video through YOLOv8 object detection, ByteTrack tracking, geometric intersection rules, and TTC accident anticipation.
+            <b>Offline Architecture:</b> YOLOv8 detection + ByteTrack + geometric intersection rules + causal TTC accident anticipation.
             </p>
         </div>
         """, unsafe_allow_html=True)
 
-    # Use uploaded video or fallback to sample
-    target_video_path = None
-    if uploaded_file is not None:
-        tfile = tempfile.NamedTemporaryFile(delete=False, suffix=".mp4")
-        tfile.write(uploaded_file.read())
-        target_video_path = tfile.name
-        st.success(f"Uploaded: {uploaded_file.name} ({uploaded_file.size / (1024*1024):.1f} MB)")
-    else:
-        st.info("💡 No file uploaded yet. You can test immediately using the provided pre-computed **sample_004.mp4** results, or upload a custom clip above!")
-        if pred_data and "sample_004.mp4" in pred_data.get("videos", {}):
-            target_video_path = "sample_004.mp4"
+    if target_video_path and os.path.exists(target_video_path):
+        # Video Player and Controls
+        v_col, c_col = st.columns([3, 2])
+        with v_col:
+            st.markdown("#### 📺 Video Player")
+            st.video(target_video_path)
+        with c_col:
+            st.markdown("#### ⚙️ Execution Controls")
+            run_live = st.button("▶️ Run Live Offline Pipeline", type="primary")
+            st.caption("Executes YOLOv8 detection, multi-object tracking, event detection, and frame-by-frame causal risk estimation on CPU.")
 
-    if target_video_path:
-        run_btn = st.button("▶️ Run Analysis Pipeline", type="primary") if uploaded_file else True
+        # Data retrieval: pre-computed or live
+        events = None
+        risk_curve = None
+        elapsed_time = None
 
-        if run_btn:
-            if uploaded_file:
-                with st.spinner("Analyzing video frames (Detection + Tracking + Event Engine + Risk Estimator)..."):
-                    import solution
-                    t0 = time.perf_counter()
-                    events = solution.detect_events(target_video_path)
-                    elapsed = time.perf_counter() - t0
-                    st.success(f"Processing complete in {elapsed:.1f}s! Found {len(events)} events.")
-                    
-                    # Generate sample risk curve for uploaded video
-                    cap = cv2.VideoCapture(target_video_path)
-                    fps = cap.get(cv2.CAP_PROP_FPS) or 30.0
-                    n_frames = int(cap.get(cv2.CAP_PROP_FRAME_COUNT))
-                    cap.release()
-                    risk_curve = [[round(i/fps, 2), 0.0] for i in range(min(500, n_frames))]
-            else:
+        if run_live:
+            with st.spinner("Executing End-to-End Pipeline (Detection + Tracking + Event Engine + Risk Estimator)..."):
+                import solution
+                from src.risk_estimator import RiskEstimator
+                t0 = time.perf_counter()
+                events = solution.detect_events(target_video_path)
+                
+                # Run Risk Estimator
+                cap = cv2.VideoCapture(target_video_path)
+                fps = cap.get(cv2.CAP_PROP_FPS) or 25.0
+                n_frames = int(cap.get(cv2.CAP_PROP_FRAME_COUNT))
+                w = int(cap.get(cv2.CAP_PROP_FRAME_WIDTH))
+                h = int(cap.get(cv2.CAP_PROP_FRAME_HEIGHT))
+                risk_est = RiskEstimator(stride=4)
+                risk_est.reset({'width': w, 'height': h, 'fps': fps})
+
+                risk_curve = []
+                frame_i = 0
+                while True:
+                    ret, frame = cap.read()
+                    if not ret:
+                        break
+                    t_sec = round(frame_i / fps, 2)
+                    r = risk_est.step(frame, t_sec)
+                    if frame_i % 4 == 0:
+                        risk_curve.append([t_sec, round(float(r), 4)])
+                    frame_i += 1
+                cap.release()
+                elapsed_time = time.perf_counter() - t0
+                st.success(f"Live processing completed in {elapsed_time:.1f}s! ({n_frames/fps:.1f}s footage processed)")
+        elif is_preset:
+            if preset_key == "sample_004.mp4" and pred_data and "sample_004.mp4" in pred_data.get("videos", {}):
                 entry = pred_data["videos"]["sample_004.mp4"]
-                events = entry["events"]
+                events = entry.get("events", [])
                 risk_curve = entry.get("risk", [])
+                elapsed_time = 328.0
+            elif preset_key in test_videos_data:
+                entry = test_videos_data[preset_key]
+                events = entry.get("events", [])
+                risk_curve = entry.get("risk", [])
+                elapsed_time = None
 
+        if events is not None and risk_curve is not None:
+            st.markdown("---")
             st.markdown("### 📈 Detection & Anticipation Results")
-            
+
             # Metrics Row
             m1, m2, m3, m4 = st.columns(4)
             with m1:
                 st.metric("Total Events Detected", len(events))
             with m2:
-                distinct_classes = len(set(e[2] for e in events))
+                distinct_classes = len(set(e[2] for e in events)) if events else 0
                 st.metric("Distinct Event Classes", distinct_classes)
             with m3:
                 alarms = len([s for _, s in risk_curve if s >= 0.5])
                 st.metric("Alarms Triggered (Risk ≥ 0.5)", alarms)
             with m4:
-                st.metric("Model Status", "100% Compliant (Offline)")
+                status_str = f"Live ({elapsed_time:.1f}s)" if run_live else "Pre-Computed (Offline)"
+                st.metric("Inference Mode", status_str)
 
             # Timeline Gantt Chart (Plotly)
             st.subheader("1. Interactive Temporal Event Timeline (Part A)")
             if events:
                 df_events = pd.DataFrame(events, columns=["Start (s)", "End (s)", "Event Class"])
                 df_events["Duration (s)"] = (df_events["End (s)"] - df_events["Start (s)"]).round(2)
-                
+
                 fig_timeline = px.timeline(
                     df_events,
                     x_start="Start (s)",
@@ -202,7 +286,7 @@ if menu == "🚀 Live Interactive Demo":
                     title="Temporal Event Segments [start_sec, end_sec, label]"
                 )
                 fig_timeline.update_layout(
-                    height=400,
+                    height=360,
                     xaxis_title="Video Timestamp (seconds)",
                     yaxis_title="Official Event Class",
                     margin=dict(l=20, r=20, t=40, b=20),
@@ -210,12 +294,11 @@ if menu == "🚀 Live Interactive Demo":
                 )
                 st.plotly_chart(fig_timeline, use_container_width=True)
             else:
-                st.warning("No events detected in this clip.")
+                st.info("ℹ️ No Part A violations detected in this footage. Geometry-specific rules (e.g. stop line) require intersection calibration, while physics-based risk and tracking operate dynamically.")
 
             # Risk Curve Plot (Plotly)
             st.subheader("2. Causal Accident Anticipation Risk Curve (Part B)")
             if risk_curve:
-                # Subsample risk curve for smooth plotting
                 df_risk = pd.DataFrame(risk_curve[::2], columns=["t_sec", "Risk Score"])
                 fig_risk = go.Figure()
                 fig_risk.add_trace(go.Scatter(
@@ -225,7 +308,6 @@ if menu == "🚀 Live Interactive Demo":
                     name="Causal Risk P(accident ≤ 5s)",
                     line=dict(color="#3b82f6", width=2)
                 ))
-                # Add Alarm Threshold Line (theta = 0.5)
                 fig_risk.add_hline(
                     y=0.5,
                     line_dash="dash",
@@ -244,10 +326,23 @@ if menu == "🚀 Live Interactive Demo":
                 )
                 st.plotly_chart(fig_risk, use_container_width=True)
 
-            # Tabular Events Breakdown
-            st.subheader("3. Structured Event Output Table")
+            # Tabular Events Breakdown & Export
+            st.subheader("3. Structured Event Output Table & Evidence Export")
             if events:
-                st.dataframe(df_events, use_container_width=True, height=280)
+                st.dataframe(df_events, use_container_width=True, height=240)
+            
+            # Export JSON
+            export_payload = {
+                "video": os.path.basename(target_video_path),
+                "events": events,
+                "risk": risk_curve
+            }
+            st.download_button(
+                label="📥 Export Prediction JSON Dossier",
+                data=json.dumps(export_payload, indent=2),
+                file_name=f"sentinel_dossier_{os.path.basename(target_video_path).split('.')[0]}.json",
+                mime="application/json"
+            )
 
 
 # ==============================================================================
