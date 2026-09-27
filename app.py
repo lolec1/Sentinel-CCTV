@@ -63,7 +63,7 @@ st.markdown("""
 
 # Navigation Sidebar
 with st.sidebar:
-    st.image("https://img.icons8.com/isometric/100/traffic-light.png", width=64)
+    st.markdown('<div style="font-size: 2.6rem; line-height: 1; margin-bottom: 0.2rem;">🚦</div>', unsafe_allow_html=True)
     st.title("Sentinel-CCTV")
     st.caption("WIUT Hackathon 2026 — Team DeepFlow-Vision")
     
@@ -127,7 +127,7 @@ test_videos_data = load_test_videos_data()
 # ==============================================================================
 if menu == "🚀 Live Interactive Demo":
     st.markdown('<div class="main-header">🚀 Live Traffic Event Detection & Risk Demo</div>', unsafe_allow_html=True)
-    st.markdown('<div class="sub-header">Select from 5 safe benchmark CCTV road camera clips or upload any custom .mp4 to run offline detection & causal risk anticipation.</div>', unsafe_allow_html=True)
+    st.markdown('<div class="sub-header">Select from benchmark CCTV road camera clips or upload any custom .mp4 to run offline detection & causal risk anticipation.</div>', unsafe_allow_html=True)
 
     col_ctrl, col_info = st.columns([2, 1])
     with col_ctrl:
@@ -135,11 +135,11 @@ if menu == "🚀 Live Interactive Demo":
             "Select Video Source",
             [
                 "🎯 Official Hackathon CCTV (sample_004.mp4 — 127.6s, F1=1.000)",
-                "📹 External Test 1: Intel Road Vehicle Camera (intel_car_detection.mp4 — 30.2s)",
-                "📹 External Test 2: Intel Crosswalk & Cyclist Junction (intel_person_bicycle_car.mp4 — 53.9s)",
-                "📹 External Test 3: Highway Multi-Lane Traffic Flow (highway_traffic_flow.mp4 — 14.9s)",
-                "📹 External Test 4: Traffic Signal Violation Camera (traffic_violation_camera.mp4 — 27.2s)",
-                "📹 External Test 5: OpenCV Pedestrian Crossing Surveillance (opencv_pedestrian_surveillance.mp4 — 79.5s)",
+                "📹 4-Way Intersection CCTV (cctv_crossroad_intersection.mp4 — 50.0s)",
+                "📹 Urban Avenue Multi-Lane Traffic (cctv_intersection_raasta.mp4 — 20.0s)",
+                "📹 Night Red Light Violation Camera (traffic_violation_camera.mp4 — 27.2s)",
+                "📹 Highway Multi-Lane Traffic Flow (highway_traffic_flow.mp4 — 14.9s)",
+                "📹 Pedestrian Crossing Surveillance (opencv_pedestrian_surveillance.mp4 — 79.5s)",
                 "📁 Upload Custom .mp4 Video"
             ]
         )
@@ -153,22 +153,22 @@ if menu == "🚀 Live Interactive Demo":
             target_video_path = str(BASE_DIR / "samples" / "sample_004.mp4")
             is_preset = True
             preset_key = "sample_004.mp4"
-        elif "intel_car_detection" in source_mode:
-            target_video_path = str(BASE_DIR / "test_videos" / "intel_car_detection.mp4")
+        elif "cctv_crossroad_intersection" in source_mode:
+            target_video_path = str(BASE_DIR / "test_videos" / "cctv_crossroad_intersection.mp4")
             is_preset = True
-            preset_key = "intel_car_detection.mp4"
-        elif "intel_person_bicycle_car" in source_mode:
-            target_video_path = str(BASE_DIR / "test_videos" / "intel_person_bicycle_car.mp4")
+            preset_key = "cctv_crossroad_intersection.mp4"
+        elif "cctv_intersection_raasta" in source_mode:
+            target_video_path = str(BASE_DIR / "test_videos" / "cctv_intersection_raasta.mp4")
             is_preset = True
-            preset_key = "intel_person_bicycle_car.mp4"
-        elif "highway_traffic_flow" in source_mode:
-            target_video_path = str(BASE_DIR / "test_videos" / "highway_traffic_flow.mp4")
-            is_preset = True
-            preset_key = "highway_traffic_flow.mp4"
+            preset_key = "cctv_intersection_raasta.mp4"
         elif "traffic_violation_camera" in source_mode:
             target_video_path = str(BASE_DIR / "test_videos" / "traffic_violation_camera.mp4")
             is_preset = True
             preset_key = "traffic_violation_camera.mp4"
+        elif "highway_traffic_flow" in source_mode:
+            target_video_path = str(BASE_DIR / "test_videos" / "highway_traffic_flow.mp4")
+            is_preset = True
+            preset_key = "highway_traffic_flow.mp4"
         elif "opencv_pedestrian" in source_mode:
             target_video_path = str(BASE_DIR / "test_videos" / "opencv_pedestrian_surveillance.mp4")
             is_preset = True
@@ -199,7 +199,12 @@ if menu == "🚀 Live Interactive Demo":
         v_col, c_col = st.columns([3, 2])
         with v_col:
             st.markdown("#### 📺 Video Player")
-            st.video(target_video_path)
+            try:
+                with open(target_video_path, "rb") as vf:
+                    v_bytes = vf.read()
+                st.video(v_bytes, format="video/mp4")
+            except Exception:
+                st.video(target_video_path)
         with c_col:
             st.markdown("#### ⚙️ Execution Controls")
             run_live = st.button("▶️ Run Live Offline Pipeline", type="primary")
@@ -270,27 +275,73 @@ if menu == "🚀 Live Interactive Demo":
                 status_str = f"Live ({elapsed_time:.1f}s)" if run_live else "Pre-Computed (Offline)"
                 st.metric("Inference Mode", status_str)
 
-            # Timeline Gantt Chart (Plotly)
+            # Timeline Gantt Chart (Plotly horizontal bars)
             st.subheader("1. Interactive Temporal Event Timeline (Part A)")
             if events:
                 df_events = pd.DataFrame(events, columns=["Start (s)", "End (s)", "Event Class"])
                 df_events["Duration (s)"] = (df_events["End (s)"] - df_events["Start (s)"]).round(2)
 
-                fig_timeline = px.timeline(
-                    df_events,
-                    x_start="Start (s)",
-                    x_end="End (s)",
-                    y="Event Class",
-                    color="Event Class",
-                    hover_data=["Start (s)", "End (s)", "Duration (s)"],
-                    title="Temporal Event Segments [start_sec, end_sec, label]"
-                )
+                fig_timeline = go.Figure()
+                palette = {
+                    "stop_line": "#f59e0b",
+                    "solid_line_crossing": "#3b82f6",
+                    "red_light": "#ef4444",
+                    "jaywalking": "#ec4899",
+                    "accident": "#dc2626",
+                    "near_miss": "#f97316",
+                    "stopped_vehicle": "#8b5cf6",
+                    "illegal_u_turn": "#a855f7",
+                    "wrong_way": "#e11d48",
+                    "failure_to_yield": "#14b8a6",
+                    "congestion": "#64748b"
+                }
+
+                added_legend = set()
+                for _, row in df_events.iterrows():
+                    cls = str(row["Event Class"])
+                    c = palette.get(cls, "#10b981")
+                    show_leg = cls not in added_legend
+                    added_legend.add(cls)
+
+                    s_val = float(row["Start (s)"])
+                    e_val = float(row["End (s)"])
+                    d_val = float(row["Duration (s)"])
+
+                    fig_timeline.add_trace(go.Bar(
+                        x=[d_val],
+                        y=[cls],
+                        base=[s_val],
+                        orientation="h",
+                        name=cls,
+                        legendgroup=cls,
+                        showlegend=show_leg,
+                        marker=dict(color=c, line=dict(color="#ffffff", width=1)),
+                        hovertemplate=(
+                            f"<b>{cls}</b><br>"
+                            f"Start: {s_val:.2f}s<br>"
+                            f"End: {e_val:.2f}s<br>"
+                            f"Duration: {d_val:.2f}s<extra></extra>"
+                        )
+                    ))
+
+                max_t = max([float(row["End (s)"]) for _, row in df_events.iterrows()] + [30.0])
                 fig_timeline.update_layout(
-                    height=360,
-                    xaxis_title="Video Timestamp (seconds)",
-                    yaxis_title="Official Event Class",
-                    margin=dict(l=20, r=20, t=40, b=20),
-                    template="plotly_dark"
+                    barmode="overlay",
+                    height=280,
+                    xaxis=dict(
+                        title="Video Timestamp (seconds)",
+                        ticksuffix="s",
+                        showgrid=True,
+                        gridcolor="#334155",
+                        range=[0, max_t * 1.05]
+                    ),
+                    yaxis=dict(
+                        title="Official Event Class",
+                        autorange="reversed"
+                    ),
+                    margin=dict(l=20, r=20, t=20, b=20),
+                    template="plotly_dark",
+                    legend=dict(orientation="h", yanchor="bottom", y=1.02, xanchor="right", x=1)
                 )
                 st.plotly_chart(fig_timeline, use_container_width=True)
             else:
