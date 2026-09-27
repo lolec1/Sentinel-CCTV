@@ -15,28 +15,41 @@ REF_H = 2160
 TL_ROI = (710, 850, 2290, 2360)
 
 # 2. Main Stop Line (for southbound traffic approaching intersection)
-STOP_LINE = np.array([[480, 930], [1950, 990]], dtype=np.float32)
+STOP_LINE = np.array([[460, 960], [2260, 970]], dtype=np.float32)
 
 # 3. Crosswalk Polygons (Zebra crossings)
 # Main crosswalk (southbound lanes across to median)
-CROSSWALK_MAIN = np.array([[450, 1010], [2280, 1020], [2280, 1260], [450, 1320]], dtype=np.float32)
+CROSSWALK_MAIN = np.array([
+    [460, 1000], [2280, 1010],
+    [2280, 1260], [460, 1330]
+], dtype=np.float32)
 
 # Right crosswalk (median across to right sidewalk)
-CROSSWALK_RIGHT = np.array([[2380, 970], [3500, 1000], [3500, 1180], [2380, 1160]], dtype=np.float32)
+CROSSWALK_RIGHT = np.array([
+    [2370, 980], [3550, 1010],
+    [3550, 1180], [2370, 1170]
+], dtype=np.float32)
 
 # Bottom crosswalk (foreground zebra crossing)
-CROSSWALK_BOTTOM = np.array([[600, 1400], [1400, 1400], [1750, 2160], [550, 2160]], dtype=np.float32)
+CROSSWALK_BOTTOM = np.array([
+    [580, 1480], [1400, 1400],
+    [1780, 2160], [550, 2160]
+], dtype=np.float32)
 
 ALL_CROSSWALKS = [CROSSWALK_MAIN, CROSSWALK_RIGHT, CROSSWALK_BOTTOM]
 
-# 4. Roadway Carriageway Polygons
-# Southbound roadway (normal flow: dy > 0, moving down towards intersection)
-ROADWAY_SOUTHBOUND = np.array([
-    [300, 100], [1550, 340], [2280, 920], [2280, 1400],
-    [1800, 2160], [0, 2160], [0, 1000], [200, 600]
+# 4. Pedestrian Refuge Island (triangle in foreground where pedestrians wait safely)
+ISLAND_REFUGE = np.array([
+    [650, 1380], [1400, 1370], [1050, 1550]
 ], dtype=np.float32)
 
-# Northbound roadway (normal flow: dy < 0, moving away/upwards)
+# 5. Roadway Carriageway Polygons
+# Southbound roadway approach (true asphalt carriageway, excluding sidewalk)
+ROADWAY_SOUTHBOUND = np.array([
+    [480, 250], [1550, 320], [2280, 940], [460, 960]
+], dtype=np.float32)
+
+# Northbound roadway (far side of median)
 ROADWAY_NORTHBOUND = np.array([
     [1600, 250], [3840, 600], [3840, 1400], [2350, 950],
     [2300, 750], [1650, 320]
@@ -44,19 +57,20 @@ ROADWAY_NORTHBOUND = np.array([
 
 # Entire Intersection Polygon
 INTERSECTION_ZONE = np.array([
-    [450, 950], [2300, 950], [3600, 1050], [3840, 1500],
-    [3840, 2160], [1800, 2160], [450, 1350]
+    [460, 960], [2280, 960], [3550, 1010], [3840, 1400],
+    [3840, 2160], [1780, 2160], [460, 1330]
 ], dtype=np.float32)
 
 # Stop-line buffer zone (between stop-line and zebra, for stop_line violations)
 STOP_LINE_ZONE = np.array([
-    [480, 920], [1950, 980], [1980, 1030], [470, 1010]
+    [460, 950], [2260, 960], [2280, 1020], [460, 1010]
 ], dtype=np.float32)
 
-# Solid lane divider lines (approaching intersection)
-SOLID_LINE_1 = np.array([[950, 650], [1050, 940]], dtype=np.float32)
-SOLID_LINE_2 = np.array([[1420, 650], [1520, 960]], dtype=np.float32)
+# Solid lane divider lines (continuous solid section right before stop line, y in [870, 960])
+SOLID_LINE_1 = np.array([[1010, 870], [1050, 950]], dtype=np.float32)
+SOLID_LINE_2 = np.array([[1480, 870], [1520, 960]], dtype=np.float32)
 SOLID_LINES = [SOLID_LINE_1, SOLID_LINE_2]
+
 
 
 class SceneGeometry:
@@ -77,6 +91,7 @@ class SceneGeometry:
         self.crosswalk_right = self._scale_poly(CROSSWALK_RIGHT)
         self.crosswalk_bottom = self._scale_poly(CROSSWALK_BOTTOM)
         self.all_crosswalks = [self.crosswalk_main, self.crosswalk_right, self.crosswalk_bottom]
+        self.island_refuge = self._scale_poly(ISLAND_REFUGE)
         self.roadway_sb = self._scale_poly(ROADWAY_SOUTHBOUND)
         self.roadway_nb = self._scale_poly(ROADWAY_NORTHBOUND)
         self.intersection_zone = self._scale_poly(INTERSECTION_ZONE)
@@ -100,27 +115,33 @@ class SceneGeometry:
                 return True
         return False
 
+    def is_on_island(self, point: tuple[float, float]) -> bool:
+        """Check if point is on pedestrian refuge island."""
+        return self.is_inside_polygon(point, self.island_refuge)
+
     def is_on_roadway(self, point: tuple[float, float]) -> bool:
-        """Check if point is on the carriageway."""
-        return self.is_inside_polygon(point, self.roadway_sb) or \
-               self.is_inside_polygon(point, self.roadway_nb) or \
-               self.is_inside_polygon(point, self.intersection_zone)
+        """Check if point is on the carriageway (excluding refuge island)."""
+        if self.is_on_island(point):
+            return False
+        return (
+            self.is_inside_polygon(point, self.roadway_sb)
+            or self.is_inside_polygon(point, self.roadway_nb)
+            or self.is_inside_polygon(point, self.intersection_zone)
+        )
 
     def crosses_stop_line(self, p1: tuple[float, float], p2: tuple[float, float]) -> bool:
         """Check if trajectory segment from p1 to p2 crosses the stop line (from top to bottom)."""
-        # Stop line: approx from left (x1, y1) to right (x2, y2)
         sl1 = self.stop_line[0]
         sl2 = self.stop_line[1]
-        
-        # Check segment intersection
+
         def ccw(A, B, C):
             return (C[1]-A[1]) * (B[0]-A[0]) > (B[1]-A[1]) * (C[0]-A[0])
 
         A, B = p1, p2
         C, D = (sl1[0], sl1[1]), (sl2[0], sl2[1])
         intersects = (ccw(A, C, D) != ccw(B, C, D)) and (ccw(A, B, C) != ccw(A, B, D))
-        # Ensure moving forward/downward (p2[1] > p1[1])
-        return intersects and (p2[1] >= p1[1])
+        # Ensure moving forward/downward
+        return bool(intersects and (p2[1] >= p1[1]))
 
     def crosses_solid_line(self, p1: tuple[float, float], p2: tuple[float, float]) -> bool:
         """Check if vehicle trajectory crossed any solid lane marking."""
@@ -144,11 +165,10 @@ class TrafficLightTracker:
 
     def update(self, frame: np.ndarray, t_sec: float) -> str:
         ymin, ymax, xmin, xmax = self.scene.tl_roi
-        # Ensure inside bounds
         h, w = frame.shape[:2]
         ymin, ymax = max(0, ymin), min(h, ymax)
         xmin, xmax = max(0, xmin), min(w, xmax)
-        
+
         crop = frame[ymin:ymax, xmin:xmax]
         if crop.size == 0:
             return self.last_stable_state

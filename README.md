@@ -153,8 +153,12 @@ At each incoming frame $t$, the causal `RiskEstimator` observes all active entit
 
 ---
 
-## 👥 The Team
+## 👥 The Team — DeepFlow-Vision
 
-- **Member A (Vision & Tracking Lead):** Neural network inference, ByteTrack tracking, runtime optimization.
-- **Member B (Logic & Event Physics Lead):** Scene layout geometry, 14-class event rules, causal TTC risk model.
-- **Member C (Demo & Analytics Lead):** Streamlit web dashboard, EDA visualizations, technical report.
+- **Shermuxamedov Bekzod (Team Captain & CV Lead):** Neural network inference, multi-object tracking, real-time runtime optimization.  
+  📧 `b.shermuxamedov@student.inha.uz` • 📱 `+998977740434`
+- **Voronin Mixail (Logic & Event Physics Lead):** Scene layout geometry, 14-class event rules, causal TTC risk model.  
+  📧 `m.voronin@student.inha.uz`
+- **Xadjiaxmedova Hilolabonu (Demo & Analytics Lead):** Streamlit web dashboard, EDA visualizations, technical reporting.  
+  📧 `h.xadjiaxmedova@student.inha.uz`
+

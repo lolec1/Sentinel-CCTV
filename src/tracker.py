@@ -1,5 +1,6 @@
 """
 tracker.py — High-performance multi-object tracker with velocity, heading, and trajectory dynamics.
+Includes class-agnostic NMS to eliminate duplicate detections.
 """
 from __future__ import annotations
 import math
@@ -58,7 +59,6 @@ class Track:
             
             raw_vx = (c_curr[0] - c_prev[0]) / dt
             raw_vy = (c_curr[1] - c_prev[1]) / dt
-            raw_speed = math.hypot(raw_vx, raw_vy)
             
             # Exponential smoothing for velocity
             alpha = 0.6
@@ -68,8 +68,8 @@ class Track:
             self.speed = math.hypot(self.vx, self.vy)
             self.accel = (self.speed - prev_speed) / dt
 
-            # Stationary check (e.g. speed < 12 px/sec)
-            if self.speed < 12.0:
+            # Stationary check
+            if self.speed < 8.0:
                 if self.stationary_since is None:
                     self.stationary_since = t_sec
                 self.is_stationary = True
@@ -86,13 +86,13 @@ class Track:
 
     def stationary_duration(self, current_t: float) -> float:
         if self.is_stationary and self.stationary_since is not None:
-            return current_t - self.stationary_since
+            return max(0.0, current_t - self.stationary_since)
         return 0.0
 
 
 class RoadTracker:
-    """Multi-object tracker associating detections across frames."""
-    def __init__(self, max_misses: int = 5, iou_thresh: float = 0.25):
+    """Multi-object tracker associating detections across frames with class-agnostic NMS."""
+    def __init__(self, max_misses: int = 5, iou_thresh: float = 0.20):
         self.next_id = 1
         self.tracks: list[Track] = []
         self.dead_tracks: list[Track] = []
@@ -100,7 +100,20 @@ class RoadTracker:
         self.iou_thresh = iou_thresh
 
     def update(self, detections: list[Detection], t_sec: float) -> list[Track]:
-        # Pairwise IoU cost matrix
+        # 1. Class-Agnostic Non-Maximum Suppression to eliminate duplicate boxes
+        dets = sorted(detections, key=lambda d: -d.conf)
+        filtered_dets: list[Detection] = []
+        for d in dets:
+            keep = True
+            for kept in filtered_dets:
+                if iou(d.bbox, kept.bbox) > 0.45:
+                    keep = False
+                    break
+            if keep:
+                filtered_dets.append(d)
+        detections = filtered_dets
+
+        # 2. First frame initialization
         if not self.tracks:
             for det in detections:
                 self.tracks.append(Track(self.next_id, det, t_sec))
@@ -111,12 +124,11 @@ class RoadTracker:
         unmatched_dets = set(range(len(detections)))
         unmatched_tracks = set(range(len(self.tracks)))
 
-        # Match greedy descending IoU
+        # 3. Match greedy descending IoU
         pairs = []
         for t_idx, track in enumerate(self.tracks):
             for d_idx, det in enumerate(detections):
                 score = iou(track.last_bbox, det.bbox)
-                # Allow cross-class matching if IoU is high (e.g. car -> truck switch)
                 if score >= self.iou_thresh:
                     pairs.append((score, t_idx, d_idx))
 
@@ -127,11 +139,11 @@ class RoadTracker:
                 unmatched_tracks.remove(t_idx)
                 unmatched_dets.remove(d_idx)
 
-        # Update matched tracks
+        # 4. Update matched tracks
         for t_idx, d_idx in matches:
             self.tracks[t_idx].update(detections[d_idx], t_sec)
 
-        # Handle unmatched tracks (coasting)
+        # 5. Handle unmatched tracks (coasting)
         active_tracks = []
         for t_idx in unmatched_tracks:
             track = self.tracks[t_idx]
@@ -144,7 +156,7 @@ class RoadTracker:
         for t_idx, _ in matches:
             active_tracks.append(self.tracks[t_idx])
 
-        # Handle new tracks
+        # 6. Handle new tracks
         for d_idx in unmatched_dets:
             new_track = Track(self.next_id, detections[d_idx], t_sec)
             self.next_id += 1
@@ -154,5 +166,4 @@ class RoadTracker:
         return self.tracks
 
     def get_all_tracks(self) -> list[Track]:
-        """Return both active and historical tracks."""
         return self.tracks + self.dead_tracks

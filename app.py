@@ -479,50 +479,51 @@ elif menu == "👥 Team & Contributions":
     with t1:
         st.markdown("""
         <div class="metric-card">
-            <h3 style="color:#60a5fa;">Member A</h3>
-            <p><strong>Role:</strong> Vision & Tracking Lead</p>
+            <h3 style="color:#60a5fa;">Shermuxamedov Bekzod</h3>
+            <p><strong>Role:</strong> Team Captain & Computer Vision Lead</p>
             <p><strong>Responsibilities:</strong></p>
             <ul>
-                <li>YOLOv8 model setup & offline weight packaging</li>
-                <li>RoadTracker multi-object tracking implementation</li>
-                <li>Inference latency benchmarking & frame stride optimization</li>
-                <li>Docker & environment reproducibility</li>
+                <li>YOLOv8 vision backbone & offline packaging</li>
+                <li>RoadTracker multi-object tracking & class-agnostic NMS</li>
+                <li>Latency benchmarking & frame stride optimization</li>
+                <li>Harness orchestration & submission validation</li>
             </ul>
-            <p><strong>Links:</strong> <a href="https://github.com">GitHub</a> | <a href="https://linkedin.com">LinkedIn</a> | <a href="#">Portfolio</a></p>
+            <p><strong>Contact:</strong> <a href="mailto:b.shermuxamedov@student.inha.uz">b.shermuxamedov@student.inha.uz</a><br>📱 +998 (97) 774-04-34</p>
         </div>
         """, unsafe_allow_html=True)
 
     with t2:
         st.markdown("""
         <div class="metric-card">
-            <h3 style="color:#34d399;">Member B</h3>
+            <h3 style="color:#34d399;">Voronin Mixail</h3>
             <p><strong>Role:</strong> Logic & Event Physics Lead</p>
             <p><strong>Responsibilities:</strong></p>
             <ul>
-                <li>Scene layout & camera calibration mapping</li>
-                <li>Traffic light phase tracker with temporal filter</li>
-                <li>14-class traffic event detection rules</li>
-                <li>TTC-based causal RiskEstimator & alarm calibration</li>
+                <li>Fixed CCTV scene layout & spatial polygon calibration</li>
+                <li>HSV traffic light phase tracker & temporal smoothing</li>
+                <li>14-class rule-based event physics engine</li>
+                <li>Causal Time-to-Collision (TTC) RiskEstimator</li>
             </ul>
-            <p><strong>Links:</strong> <a href="https://github.com">GitHub</a> | <a href="https://linkedin.com">LinkedIn</a> | <a href="#">Portfolio</a></p>
+            <p><strong>Contact:</strong> <a href="mailto:m.voronin@student.inha.uz">m.voronin@student.inha.uz</a></p>
         </div>
         """, unsafe_allow_html=True)
 
     with t3:
         st.markdown("""
         <div class="metric-card">
-            <h3 style="color:#f472b6;">Member C</h3>
+            <h3 style="color:#f472b6;">Xadjiaxmedova Hilolabonu</h3>
             <p><strong>Role:</strong> Demo & Analytics Lead</p>
             <p><strong>Responsibilities:</strong></p>
             <ul>
-                <li>Interactive Streamlit & Plotly web dashboard</li>
-                <li>Sample video EDA, motion heatmaps, and time-series</li>
-                <li>Harness execution & format validation (`evaluate.py`)</li>
-                <li>Technical report documentation & design</li>
+                <li>Interactive Streamlit & Plotly submission dashboard</li>
+                <li>Exploratory data analysis & motion heatmaps</li>
+                <li>Evaluation metric benchmarking against dev set</li>
+                <li>Technical report documentation & presentation</li>
             </ul>
-            <p><strong>Links:</strong> <a href="https://github.com">GitHub</a> | <a href="https://linkedin.com">LinkedIn</a> | <a href="#">Portfolio</a></p>
+            <p><strong>Contact:</strong> <a href="mailto:h.xadjiaxmedova@student.inha.uz">h.xadjiaxmedova@student.inha.uz</a></p>
         </div>
         """, unsafe_allow_html=True)
+
 
 
 # ==============================================================================

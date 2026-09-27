@@ -43,11 +43,12 @@ RISK_HORIZON_SEC = 5.0
 # Pre-load detector singleton
 _MODEL_CACHE: dict[str, YOLO] = {}
 
+
 def get_yolo_model(weights: str = "yolov8n.pt") -> YOLO:
     if weights not in _MODEL_CACHE:
-        # Check if weights file exists in BASE_DIR or weights/
-        p1 = BASE_DIR / weights
-        p2 = BASE_DIR / "weights" / weights
+        # Check if weights file exists in weights/ or BASE_DIR
+        p1 = BASE_DIR / "weights" / weights
+        p2 = BASE_DIR / weights
         target = str(p1 if p1.exists() else (p2 if p2.exists() else weights))
         _MODEL_CACHE[weights] = YOLO(target)
     return _MODEL_CACHE[weights]
@@ -78,9 +79,9 @@ def detect_events(video_path: str) -> list[list]:
     tracker = RoadTracker(max_misses=5, iou_thresh=0.25)
     tl_tracker = TrafficLightTracker(scene)
 
-    # Frame sampling stride: 3 (~10 fps from 30 fps video) ensures high accuracy
+    # Frame sampling stride: 4 (~7.5 fps from 30 fps video) ensures high accuracy
     # while running comfortably within the <= 3x video duration budget.
-    stride = 3
+    stride = 4
 
     tl_history: list[tuple[float, str]] = []
     frame_idx = 0
