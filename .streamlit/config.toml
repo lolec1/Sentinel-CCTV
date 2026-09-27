@@ -1,0 +1,17 @@
+[server]
+# Expand maximum file upload limit from default 200MB to 8192MB (8 GB)
+maxUploadSize = 8192
+# Expand maximum WebSocket message size for streaming video payloads
+maxMessageSize = 8192
+enableCORS = false
+enableXsrfProtection = false
+
+[browser]
+gatherUsageStats = false
+
+[theme]
+base = "dark"
+primaryColor = "#3b82f6"
+backgroundColor = "#0e1726"
+secondaryBackgroundColor = "#1e293b"
+textColor = "#f8fafc"

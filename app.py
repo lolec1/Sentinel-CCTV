@@ -174,12 +174,23 @@ if menu == "🚀 Live Interactive Demo":
             is_preset = True
             preset_key = "opencv_pedestrian_surveillance.mp4"
         else:
-            uploaded_file = st.file_uploader("Upload Traffic Video (.mp4)", type=["mp4"], help="Recommended length: up to 2.5 minutes for rapid inference.")
+            uploaded_file = st.file_uploader(
+                "Upload Traffic Video (.mp4)",
+                type=["mp4"],
+                help="Supports large videos up to 8 GB (e.g. 5 GB 4K footage). Uploaded files are streamed in chunks."
+            )
             if uploaded_file is not None:
-                tfile = tempfile.NamedTemporaryFile(delete=False, suffix=".mp4")
-                tfile.write(uploaded_file.read())
-                target_video_path = tfile.name
-                st.success(f"Uploaded: {uploaded_file.name} ({uploaded_file.size / (1024*1024):.1f} MB)")
+                file_size_mb = uploaded_file.size / (1024 * 1024)
+                with tempfile.NamedTemporaryFile(delete=False, suffix=".mp4") as tfile:
+                    with st.spinner(f"Saving uploaded file ({file_size_mb:.1f} MB) in streaming chunks..."):
+                        while True:
+                            chunk = uploaded_file.read(16 * 1024 * 1024)  # 16 MB chunks
+                            if not chunk:
+                                break
+                            tfile.write(chunk)
+                        tfile.flush()
+                    target_video_path = tfile.name
+                st.success(f"Uploaded: {uploaded_file.name} ({file_size_mb:.1f} MB)")
 
     with col_info:
         st.markdown("""
@@ -199,12 +210,17 @@ if menu == "🚀 Live Interactive Demo":
         v_col, c_col = st.columns([3, 2])
         with v_col:
             st.markdown("#### 📺 Video Player")
-            try:
-                with open(target_video_path, "rb") as vf:
-                    v_bytes = vf.read()
-                st.video(v_bytes, format="video/mp4")
-            except Exception:
-                st.video(target_video_path)
+            vid_size_mb = os.path.getsize(target_video_path) / (1024 * 1024)
+            # For large videos (> 100 MB), stream directly from disk to avoid WebSocket memory limits
+            if vid_size_mb > 100.0:
+                st.video(target_video_path, format="video/mp4")
+            else:
+                try:
+                    with open(target_video_path, "rb") as vf:
+                        v_bytes = vf.read()
+                    st.video(v_bytes, format="video/mp4")
+                except Exception:
+                    st.video(target_video_path, format="video/mp4")
         with c_col:
             st.markdown("#### ⚙️ Execution Controls")
             run_live = st.button("▶️ Run Live Offline Pipeline", type="primary")
