@@ -2,7 +2,8 @@
 
 > **WIUT Hackathon 2026 — Computer Vision Track**  
 > **Team:** DeepFlow-Vision  
-> **Status:** 100% Offline Compatible • Format Validated • Time Budget Compliant
+> **Repository:** [https://github.com/lolec1/Sentinel-CCTV](https://github.com/lolec1/Sentinel-CCTV)  
+> **Status:** 100% Offline Compatible • Format Validated • Time Budget Compliant  
 
 ---
 

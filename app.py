@@ -66,6 +66,7 @@ with st.sidebar:
     st.markdown('<div style="font-size: 2.6rem; line-height: 1; margin-bottom: 0.2rem;">🚦</div>', unsafe_allow_html=True)
     st.title("Sentinel-CCTV")
     st.caption("WIUT Hackathon 2026 — Team DeepFlow-Vision")
+    st.link_button("⭐ GitHub: lolec1/Sentinel-CCTV", "https://github.com/lolec1/Sentinel-CCTV", use_container_width=True)
     
     st.markdown("---")
     menu = st.radio(
@@ -686,6 +687,15 @@ elif menu == "👥 Team & Contributions":
         </div>
         """, unsafe_allow_html=True)
 
+    st.markdown("---")
+    repo_c1, repo_c2 = st.columns([3, 1])
+    with repo_c1:
+        st.markdown("### 🌐 Official Project Repository")
+        st.markdown("Source code, pretrained backbones, architecture diagrams, and submission harness are available at [github.com/lolec1/Sentinel-CCTV](https://github.com/lolec1/Sentinel-CCTV).")
+    with repo_c2:
+        st.markdown("<div style='margin-top: 1rem;'></div>", unsafe_allow_html=True)
+        st.link_button("⭐ View on GitHub", "https://github.com/lolec1/Sentinel-CCTV", use_container_width=True)
+
 
 
 # ==============================================================================
@@ -698,6 +708,8 @@ elif menu == "📦 Downloads & Deliverables":
     d1, d2 = st.columns(2)
     with d1:
         st.subheader("Official Submission Files")
+        st.link_button("🌐 Open GitHub Repository (lolec1/Sentinel-CCTV)", "https://github.com/lolec1/Sentinel-CCTV", use_container_width=True)
+        st.markdown("")
         if (BASE_DIR / "solution.py").exists():
             with open(BASE_DIR / "solution.py", "rb") as f:
                 st.download_button("📥 Download solution.py", f.read(), "solution.py", "text/x-python")
