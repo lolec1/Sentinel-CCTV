@@ -1,0 +1,58 @@
+{
+  "highway_traffic_flow.mp4": {
+    "resolution": "2560x1440",
+    "duration_s": 14.88,
+    "fps": 25.0,
+    "elapsed_s": 12.07,
+    "speedup_vs_realtime": 1.23,
+    "events": [],
+    "max_risk_sample": 0.4329,
+    "alarms_triggered": 0
+  },
+  "intel_car_detection.mp4": {
+    "resolution": "768x432",
+    "duration_s": 30.16,
+    "fps": 12.5,
+    "elapsed_s": 5.24,
+    "speedup_vs_realtime": 5.76,
+    "events": [],
+    "max_risk_sample": 0.0,
+    "alarms_triggered": 0
+  },
+  "intel_person_bicycle_car.mp4": {
+    "resolution": "768x432",
+    "duration_s": 53.92,
+    "fps": 12.0,
+    "elapsed_s": 9.08,
+    "speedup_vs_realtime": 5.94,
+    "events": [],
+    "max_risk_sample": 0.0,
+    "alarms_triggered": 0
+  },
+  "opencv_pedestrian_surveillance.mp4": {
+    "resolution": "768x576",
+    "duration_s": 79.5,
+    "fps": 10.0,
+    "elapsed_s": 13.82,
+    "speedup_vs_realtime": 5.75,
+    "events": [
+      [
+        0.0,
+        79.2,
+        "stopped_vehicle"
+      ]
+    ],
+    "max_risk_sample": 0.0,
+    "alarms_triggered": 0
+  },
+  "traffic_violation_camera.mp4": {
+    "resolution": "1920x1012",
+    "duration_s": 27.15,
+    "fps": 26.33,
+    "elapsed_s": 14.14,
+    "speedup_vs_realtime": 1.92,
+    "events": [],
+    "max_risk_sample": 0.2933,
+    "alarms_triggered": 0
+  }
+}
