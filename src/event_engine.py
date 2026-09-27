@@ -5,6 +5,7 @@ Calibrated for fixed intersection surveillance with zero false-alarm physics.
 from __future__ import annotations
 import math
 import numpy as np
+import cv2
 from src.scene import SceneGeometry
 from src.tracker import Track, iou
 
@@ -452,3 +453,4 @@ class EventEngine:
 
         if cong_start is not None and (max(time_bins.keys()) - cong_start) >= 15.0:
             self.raw_events.append([float(cong_start), float(max(time_bins.keys())), "congestion"])
+

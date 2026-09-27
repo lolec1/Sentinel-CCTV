@@ -31,6 +31,7 @@ class RiskEstimator:
         self.frame_idx = 0
         self.last_score = 0.0
         self.meta: dict = {}
+        self.track_bev_history: dict[int, tuple[float, float, float]] = {}
 
     def reset(self, meta: dict) -> None:
         """Called once before the first frame of each video."""
@@ -41,6 +42,7 @@ class RiskEstimator:
         self.scene = SceneGeometry(meta.get("width", 3840), meta.get("height", 2160))
         self.frame_idx = 0
         self.last_score = 0.0
+        self.track_bev_history = {}
 
     def step(self, frame: np.ndarray, t_sec: float) -> float:
         """Frame: BGR uint8 (H, W, 3). Return P(accident within 5 s) in [0, 1]."""
@@ -73,72 +75,104 @@ class RiskEstimator:
 
         active_tracks = self.tracker.update(detections, t_sec)
 
+        current_bev_state = {}
+        for trk in active_tracks:
+            # Ground contact point: bottom-center of bounding box
+            x1, y1, x2, y2 = trk.last_bbox
+            bottom_center = ((x1 + x2) / 2.0, y2)
+            
+            # Map 2D image coordinates to BEV metric coordinates (in meters)
+            x_bev, y_bev = self.scene.image_to_bev(bottom_center)
+
+            vx_bev, vy_bev = 0.0, 0.0
+            if trk.track_id in self.track_bev_history:
+                prev_t, prev_x, prev_y = self.track_bev_history[trk.track_id]
+                dt = t_sec - prev_t
+                if dt > 0:
+                    vx_bev = (x_bev - prev_x) / dt  # meters / second
+                    vy_bev = (y_bev - prev_y) / dt  # meters / second
+
+            current_bev_state[trk.track_id] = {
+                "track": trk,
+                "pos": np.array([x_bev, y_bev], dtype=np.float32),
+                "vel": np.array([vx_bev, vy_bev], dtype=np.float32)
+            }
+
+        # Save history for velocity computation on next frame
+        self.track_bev_history = {
+            tid: (t_sec, state["pos"][0], state["pos"][1]) 
+            for tid, state in current_bev_state.items()
+        }
+
         # Compute Pairwise TTC & Closing Dynamics
         max_pair_risk = 0.0
-        n = len(active_tracks)
+        active_ids = list(current_bev_state.keys())
+        n = len(active_ids)
 
         for i in range(n):
-            tr1 = active_tracks[i]
-            c1 = tr1.centroid
+            id1 = active_ids[i]
+            st1 = current_bev_state[id1]
+            tr1 = st1["track"]
+
             for j in range(i + 1, n):
-                tr2 = active_tracks[j]
-                c2 = tr2.centroid
+                id2 = active_ids[j]
+                st2 = current_bev_state[id2]
+                tr2 = st2["track"]
 
                 # Part B evaluates vehicle accidents (two motorized vehicles)
                 if tr1.cls_name not in ["car", "truck", "bus"] or tr2.cls_name not in ["car", "truck", "bus"]:
                     continue
 
-                # Ignore nascent tracks with velocity jitter (require established tracks)
+                # Require established tracks to avoid velocity jitter
                 if len(tr1.history) < 4 or len(tr2.history) < 4:
                     continue
 
-                dx = c1[0] - c2[0]
-                dy = c1[1] - c2[1]
-                dist = math.hypot(dx, dy)
+                pos1, vel1 = st1["pos"], st1["vel"]
+                pos2, vel2 = st2["pos"], st2["vel"]
 
-                if dist < 5.0 or dist > 250.0:
+                rel_pos = pos1 - pos2  # Distance vector in meters
+                dist_m = float(np.linalg.norm(rel_pos))
+
+                # Distance bounds in meters (e.g., 0.5m to 40.0m)
+                if dist_m < 0.5 or dist_m > 40.0:
                     continue
 
-                # Relative velocity vector
-                dvx = tr1.vx - tr2.vx
-                dvy = tr1.vy - tr2.vy
+                rel_vel = vel1 - vel2  # Relative velocity in m/s
+                speed1 = float(np.linalg.norm(vel1))
+                speed2 = float(np.linalg.norm(vel2))
 
-                # Closing velocity (projection of relative velocity onto connecting vector)
-                v_closing = (dx * dvx + dy * dvy) / dist
+                # Closing velocity along the distance vector (m/s)
+                v_closing = -float(np.dot(rel_pos, rel_vel) / (dist_m + 1e-6))
 
-                # EXCLUSION 1: Same-lane following / red-light queuing
-                # Both vehicles aligned in same lane corridor (|x1 - x2| < 75 px), heading downstream (vy >= -2)
-                is_same_lane_traffic = (
-                    abs(dx) < 75.0
-                    and tr1.vy >= -2.0 and tr2.vy >= -2.0
-                )
+                # EXCLUSION 1: Same-lane following / queuing
+                # Distance along X axis < 2.5 meters (lane width ~3.5m)
+                dx_m = abs(pos1[0] - pos2[0])
+                is_same_lane_traffic = (dx_m < 2.5 and vel1[1] >= -0.5 and vel2[1] >= -0.5)
 
                 # EXCLUSION 2: Parallel traffic in adjacent lanes
-                cos_heading = (tr1.vx * tr2.vx + tr1.vy * tr2.vy) / (tr1.speed * tr2.speed + 1e-6)
-                is_parallel_traffic = (cos_heading > 0.70 and abs(dx) > 60.0)
+                cos_heading = float(np.dot(vel1, vel2) / (speed1 * speed2 + 1e-6))
+                is_parallel_traffic = (cos_heading > 0.70 and dx_m > 2.0)
 
-                # In same-lane traffic, only trigger if severe high-speed closure at point-blank range (< 40 px)
-                if is_same_lane_traffic and (v_closing > -80.0 or dist > 45.0):
+                # Ignore same-lane traffic unless extreme high-speed closing at point-blank range (< 3m)
+                if is_same_lane_traffic and (v_closing < 8.0 or dist_m > 3.0):
                     continue
 
                 if is_parallel_traffic:
                     continue
 
                 # TRUE COLLISION TRAJECTORY:
-                # High closing speed (> 70 px/s) on intersecting or opposing trajectory at close distance (< 85 px)
-                if v_closing < -70.0 and dist < 85.0:
-                    closing_speed = abs(v_closing)
-                    ttc = dist / closing_speed
+                # Closing speed > 3.0 m/s (~11 km/h) at close proximity (< 12.0 meters)
+                if v_closing > 3.0 and dist_m < 12.0:
+                    ttc = dist_m / v_closing  # Time-To-Collision in seconds
 
-                    if ttc <= 1.5:
-                        # Calibrated exponential risk function
-                        base_risk = math.exp(-ttc / 0.60)
-                        speed_factor = min(1.0, closing_speed / 90.0)
-                        proximity_factor = min(1.0, 50.0 / (dist + 1e-3))
+                    if ttc <= HORIZON_SEC:
+                        # Exponential risk curve based on metric TTC
+                        base_risk = math.exp(-ttc / 1.20)
+                        speed_factor = min(1.0, v_closing / 10.0)
+                        proximity_factor = min(1.0, 8.0 / (dist_m + 1e-3))
+                        
                         risk_val = float(np.clip(base_risk * speed_factor * proximity_factor, 0.0, 1.0))
                         max_pair_risk = max(max_pair_risk, risk_val)
-
-
 
         # Causal temporal exponential moving average (suppresses single-frame blips)
         alpha = 0.40

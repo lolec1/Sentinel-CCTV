@@ -98,6 +98,42 @@ class SceneGeometry:
         self.stop_line_zone = self._scale_poly(STOP_LINE_ZONE)
         self.solid_lines = [self._scale_poly(sl) for sl in SOLID_LINES]
 
+
+        self.pts_src = np.float32([
+            [480 * self.sx,  250 * self.sy],
+            [1550 * self.sx, 320 * self.sy],
+            [2280 * self.sx, 940 * self.sy],
+            [460 * self.sx,  960 * self.sy]
+        ])
+
+
+        self.pts_dst = np.float32([
+            [0.0,  0.0],   # Top-Left (X=0m, Y=0m)
+            [12.0, 0.0],   # Top-Right (X=12m, Y=0m)
+            [12.0, 40.0],  # Bottom-Right (X=12m, Y=40m)
+            [0.0,  40.0]   # Bottom-Left (X=0m, Y=40m)
+        ])
+
+        self.H = cv2.getPerspectiveTransform(self.pts_src, self.pts_dst)
+
+        if self.H.shape != (3, 3):
+            raise ValueError("BEV homography matrix must be 3x3")
+
+
+    def image_to_bev(self, point: tuple[float, float]) -> tuple[float, float]:
+        """Converts 2D pixel coordinates (x_img, y_img) to BEV metric coordinates (X_bev, Y_bev)."""
+        pt = np.array([point[0], point[1], 1.0], dtype=np.float32)
+        bev_pt = np.dot(self.H, pt)
+    
+        z = bev_pt[2]
+        if abs(z) < 1e-6:
+            z = 1e-6
+        
+        x_bev = bev_pt[0] / z
+        y_bev = bev_pt[1] / z
+    
+        return float(x_bev), float(y_bev)
+
     def _scale_poly(self, poly: np.ndarray) -> np.ndarray:
         scaled = poly.copy()
         scaled[:, 0] *= self.sx
